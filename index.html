@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="greedy snake game, greedy snake, greedy snake online, greedy snake game online">
+    <title>Greedy Snake Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .language-link {
+            font-size: 20px;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .language-link:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Greedy Snake Game</h1>
+    <p>Select your language to start playing:</p>
+    
+    <a href="zh.html" class="language-link">中文</a>
+    <br>
+    <a href="en.html" class="language-link">English</a>
+    <br>
+    <a href="es.html" class="language-link">Español</a>
+
+    <script>
+        // This script ensures that if someone visits the page with the base URL, they get redirected to the language selection page
+        const languageLinks = document.querySelectorAll('.language-link');
+        languageLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                const language = event.target.textContent;
+                console.log(`Redirecting to ${language} page`);
+            });
+        });
+    </script>
+
+</body>
+</html>
