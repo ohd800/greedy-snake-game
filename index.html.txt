@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free online converters for text, binary, RGB, HEX, JSON, XML, UTC time, units and more. Convert anything online instantly — no signup required.">
+  <title>Convert Anything Online | Free Tools for Text, Colors, Time, Units</title>
+  <link rel="stylesheet" href="styles.css"> <!-- 可接入 Tailwind 或自写 CSS -->
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 960px; margin: auto; padding: 1em; }
+    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; }
+    .tool-card { background: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 0 4px rgba(0,0,0,0.1); }
+    .tool-card h2 { font-size: 1.1em; margin: 0.5em 0; }
+    footer { text-align: center; font-size: 0.9em; color: #666; padding: 1em; }
+    .ad-slot { margin: 1em 0; text-align: center; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert Anything Online — Free & Instant</h1>
+  <p>Text, Binary, RGB, HEX, JSON, XML, Time Zones, Units — All in One Place</p>
+</header>
+
+<div class="container">
+
+  <!-- 广告位（页面顶部中间） -->
+  <div class="ad-slot">
+    <!-- Google AdSense 广告代码位（示例用 div 占位） -->
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+
+  <!-- 工具聚合 -->
+  <div class="tool-grid">
+
+    <div class="tool-card">
+      <h2><a href="/convert-text-to-binary.html">Convert Text to Binary Online</a></h2>
+      <p>Instantly convert text to binary code — free, no signup required.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-rgb-to-hex.html">Convert RGB to HEX Color</a></h2>
+      <p>RGB to HEX and HEX to RGB color converter for designers & developers.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-utc-to-est.html">Convert UTC to EST Time</a></h2>
+      <p>Convert UTC time to EST or other time zones easily.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-json-to-xml.html">Convert JSON to XML</a></h2>
+      <p>Free online JSON to XML and XML to JSON converter.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-decimal-to-octal.html">Convert Decimal to Octal</a></h2>
+      <p>Convert decimal numbers to octal instantly online.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-knots-to-mph.html">Convert Knots to MPH</a></h2>
+      <p>Knots to miles per hour speed converter for aviation & marine use.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-epoch-to-date.html">Convert Epoch to Human Date</a></h2>
+      <p>Epoch timestamp to human-readable date converter.</p>
+    </div>
+
+    <div class="tool-card">
+      <h2><a href="/convert-bpm-to-ms.html">Convert BPM to Milliseconds</a></h2>
+      <p>Convert beats per minute (BPM) to milliseconds for music production.</p>
+    </div>
+
+  </div>
+
+  <!-- 广告位（底部中间） -->
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 ConvertAnythingOnline.com — All rights reserved. Free tools for developers, designers, students.
+</footer>
+
+</body>
+</html>

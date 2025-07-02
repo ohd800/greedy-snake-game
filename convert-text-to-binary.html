@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free online tool to convert text to binary code instantly. Convert text to binary online without signup — simple, fast and secure.">
+  <title>Convert Text to Binary Online — Free Instant Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    textarea, input[type="text"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; word-break: break-word; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    footer { text-align: center; font-size: 0.9em; color: #666; padding: 1em; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert Text to Binary Online</h1>
+  <p>Free, Instant, No Signup — The Best Text to Binary Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <!-- 工具 -->
+  <h2>Free Online Text to Binary Converter</h2>
+  <p>Paste your text below to convert it to binary code. Our tool is fast, free, and works without any registration.</p>
+
+  <textarea id="inputText" rows="5" placeholder="Enter your text here..."></textarea>
+  <button onclick="convertToBinary()">Convert to Binary</button>
+
+  <h3>Binary Output</h3>
+  <div id="binaryResult" class="result">Your binary code will appear here.</div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <h4>What is Text to Binary Conversion?</h4>
+  <p>Text to binary conversion transforms human-readable characters into binary code that computers can process. For example, the letter <strong>A</strong> becomes <strong>01000001</strong>. This tool helps developers, students, and tech enthusiasts convert text to binary online, free and instantly.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this text to binary converter free?</strong> Yes! It is 100% free and requires no signup.</li>
+    <li><strong>Does it work offline?</strong> This page works entirely in your browser. No data is sent to any server.</li>
+    <li><strong>Can I convert large amounts of text?</strong> Yes. However, for very large texts, performance depends on your browser.</li>
+  </ul>
+
+  <!-- 底部广告位
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+   -->
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free Text to Binary Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertToBinary() {
+    const text = document.getElementById('inputText').value;
+    let binary = '';
+    for (let i = 0; i < text.length; i++) {
+      binary += text[i].charCodeAt(0).toString(2).padStart(8, '0') + ' ';
+    }
+    document.getElementById('binaryResult').textContent = binary.trim();
+  }
+</script>
+
+</body>
+</html>

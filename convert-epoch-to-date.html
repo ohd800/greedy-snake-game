@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online Epoch to Date converter. Instantly convert Unix timestamps (epoch time) to human-readable dates in your local timezone — fast, secure, no signup.">
+  <title>Convert Epoch to Date Online — Free Unix Timestamp Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; word-break: break-word; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert Epoch to Date Online</h1>
+  <p>Free, Instant, No Signup — The Best Unix Timestamp to Date Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <h2>Free Epoch to Human-Readable Date Converter</h2>
+  <p>Enter a Unix timestamp (epoch time) below to convert it to a human-readable date in your local timezone. This tool is fast, free, and requires no registration.</p>
+
+  <label for="epochInput">Epoch Time (Seconds since Jan 1, 1970)</label>
+  <input type="number" id="epochInput" placeholder="e.g. 1609459200" oninput="convertEpochToDate()" />
+
+  <button onclick="convertEpochToDate()">Convert to Date</button>
+
+  <h3>Date Output</h3>
+  <div id="dateResult" class="result">Your date will appear here.</div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+ -->
+
+  <h4>Why Convert Epoch to Date?</h4>
+  <p>Epoch (Unix) time is widely used in programming, databases, APIs, and systems logging. Converting epoch time to human-readable dates is essential for debugging, analytics, and reporting.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this epoch to date converter free?</strong> Yes! 100% free and no signup required.</li>
+    <li><strong>What format is the output?</strong> It displays your local date and time in ISO format.</li>
+    <li><strong>Does this tool work offline?</strong> Yes! All conversion happens in your browser — no data is sent to a server.</li>
+  </ul>
+
+  <!-- 底部广告位
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+ -->
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free Epoch to Date Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertEpochToDate() {
+    const inputVal = document.getElementById('epochInput').value;
+    if (!inputVal) {
+      document.getElementById('dateResult').textContent = 'Please enter an epoch timestamp.';
+      return;
+    }
+
+    const epoch = parseInt(inputVal, 10);
+    if (isNaN(epoch)) {
+      document.getElementById('dateResult').textContent = 'Invalid epoch time. Please enter a valid number.';
+      return;
+    }
+
+    const date = new Date(epoch * 1000);
+    const dateStr = date.toLocaleString('en-US', { 
+      year: 'numeric', month: 'long', day: 'numeric',
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      timeZoneName: 'short'
+    });
+    document.getElementById('dateResult').textContent = dateStr;
+  }
+</script>
+
+</body>
+</html>

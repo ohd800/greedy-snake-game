@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online RGB to HEX converter. Instantly convert RGB color codes to HEX values — fast, free, no signup.">
+  <title>Convert RGB to HEX Color Online — Free Instant Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+    .color-preview { width: 100%; height: 50px; border-radius: 6px; margin-top: 1em; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert RGB to HEX Online</h1>
+  <p>Free, Instant, No Signup — The Best RGB to HEX Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <!-- 工具部分 -->
+  <h2>Free Online RGB to HEX Color Converter</h2>
+  <p>Enter your RGB values to get the HEX color code. Works instantly, no signup needed.</p>
+
+  <label for="rVal">R (0-255)</label>
+  <input type="number" id="rVal" min="0" max="255" placeholder="e.g. 255" oninput="convertRGBtoHex()"/>
+
+  <label for="gVal">G (0-255)</label>
+  <input type="number" id="gVal" min="0" max="255" placeholder="e.g. 0" oninput="convertRGBtoHex()"/>
+
+  <label for="bVal">B (0-255)</label>
+  <input type="number" id="bVal" min="0" max="255" placeholder="e.g. 128" oninput="convertRGBtoHex()"/>
+
+  <button onclick="convertRGBtoHex()">Convert to HEX</button>
+
+  <h3>HEX Output</h3>
+  <div id="hexResult" class="result">Your HEX code will appear here.</div>
+  <div id="colorPreview" class="color-preview"></div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <h4>Why Convert RGB to HEX?</h4>
+  <p>RGB to HEX conversion helps designers and developers translate color values between formats used in CSS, HTML, and design software. For example, RGB(255, 0, 128) becomes <strong>#FF0080</strong>.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this RGB to HEX converter free?</strong> Yes! It’s 100% free and works right in your browser.</li>
+    <li><strong>Does it support opacity?</strong> This tool converts RGB to HEX. For RGBA or HEX with alpha, check our <a href="convert-rgba-to-hex.html">RGBA to HEX tool</a>.</li>
+    <li><strong>Can I see the color preview?</strong> Yes! The color preview updates as you input values.</li>
+  </ul>
+
+  <!-- 底部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free RGB to HEX Color Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertRGBtoHex() {
+    const r = parseInt(document.getElementById('rVal').value) || 0;
+    const g = parseInt(document.getElementById('gVal').value) || 0;
+    const b = parseInt(document.getElementById('bVal').value) || 0;
+
+    const toHex = (n) => {
+      const hex = n.toString(16).toUpperCase();
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+
+    const hexCode = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+    document.getElementById('hexResult').textContent = hexCode;
+    document.getElementById('colorPreview').style.backgroundColor = hexCode;
+  }
+</script>
+
+</body>
+</html>

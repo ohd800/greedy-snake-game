@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://www.dhh5.com/sitemap.xml

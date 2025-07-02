@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta 
+    name="description" 
+    content="Free online BPM to milliseconds converter. Instantly convert beats per minute (BPM) to milliseconds per beat (ms) — fast, accurate, and no signup required." 
+  />
+  <title>Convert BPM to Milliseconds Online — Free BPM to ms Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #007ACC;
+      color: #fff;
+      padding: 1.5em 1em;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      margin: 2em auto;
+      padding: 0 1em;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 0.7em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+    }
+    button {
+      background: #007ACC;
+      color: white;
+      border: none;
+      padding: 0.75em 1.5em;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-bottom: 1.5em;
+      width: 100%;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+    .result {
+      background: #fff;
+      padding: 1em;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      font-weight: bold;
+      font-size: 1.25em;
+      word-break: break-word;
+      min-height: 50px;
+    }
+    .ad-slot {
+      text-align: center;
+      margin: 1.5em 0;
+    }
+    h1, h2, h3, h4 {
+      line-height: 1.3;
+    }
+    ul {
+      margin-left: 1.2em;
+      margin-bottom: 2em;
+    }
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      font-size: 0.9em;
+      color: #777;
+      border-top: 1px solid #ddd;
+      margin-top: 3em;
+    }
+    a {
+      color: #007ACC;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert BPM to Milliseconds Online</h1>
+  <p>Free, Fast & Accurate BPM to ms Converter — No Signup Needed</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <h2>BPM to Milliseconds Converter Tool</h2>
+  <p>Enter the beats per minute (BPM) value below to instantly convert it to the duration of one beat in milliseconds (ms). This tool is fast, reliable, and completely free.</p>
+
+  <label for="bpmInput">Beats Per Minute (BPM)</label>
+  <input type="number" id="bpmInput" min="1" placeholder="e.g. 120" oninput="convertBPMtoMS()" />
+
+  <button onclick="convertBPMtoMS()">Convert BPM to ms</button>
+
+  <h3>Milliseconds per Beat (ms)</h3>
+  <div id="msResult" class="result">Your result will appear here.</div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <h4>Why Convert BPM to Milliseconds?</h4>
+  <p>Musicians, producers, and DJs often need to understand the exact timing of beats. Converting BPM to milliseconds per beat helps in sequencing, programming drum machines, and syncing audio precisely.</p>
+
+  <h4>Frequently Asked Questions (FAQs)</h4>
+  <ul>
+    <li><strong>Is this BPM to milliseconds converter free?</strong> Yes, it’s completely free with no sign-up required.</li>
+    <li><strong>How is the conversion calculated?</strong> The formula is: <code>Milliseconds = 60000 ÷ BPM</code>.</li>
+    <li><strong>Can I convert any BPM value?</strong> Yes, the tool supports any BPM greater than zero.</li>
+    <li><strong>Is my data stored?</strong> No. All calculations happen in your browser; no data is sent anywhere.</li>
+  </ul>
+
+  <!-- 底部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free BPM to Milliseconds Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertBPMtoMS() {
+    const bpmInput = document.getElementById('bpmInput').value;
+    const resultEl = document.getElementById('msResult');
+
+    if (!bpmInput) {
+      resultEl.textContent = 'Please enter a BPM value.';
+      return;
+    }
+
+    const bpm = Number(bpmInput);
+    if (isNaN(bpm) || bpm <= 0) {
+      resultEl.textContent = 'Please enter a valid BPM number greater than zero.';
+      return;
+    }
+
+    const msPerBeat = 60000 / bpm;
+    resultEl.textContent = msPerBeat.toFixed(2) + ' ms per beat';
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+  <url>
+    <loc>https://www.dhh5.com/</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-text-to-binary.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-rgb-to-hex.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-utc-to-est.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-json-to-xml.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-decimal-to-octal.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-knots-to-mph.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-epoch-to-date.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.dhh5.com/convert-bpm-to-ms.html</loc>
+    <lastmod>2025-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online decimal to octal converter. Instantly convert decimal numbers to octal format — fast, secure, and no signup required.">
+  <title>Convert Decimal to Octal Online — Free Instant Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; word-break: break-word; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert Decimal to Octal Online</h1>
+  <p>Free, Instant, No Signup — The Best Decimal to Octal Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <h2>Free Online Decimal to Octal Converter</h2>
+  <p>Enter your decimal number below to get its octal equivalent. Our tool is fast, free, and requires no registration.</p>
+
+  <label for="decimalInput">Decimal Number</label>
+  <input type="number" id="decimalInput" placeholder="e.g. 255" oninput="convertDecimalToOctal()" />
+
+  <button onclick="convertDecimalToOctal()">Convert to Octal</button>
+
+  <h3>Octal Output</h3>
+  <div id="octalResult" class="result">Your octal number will appear here.</div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <h4>Why Convert Decimal to Octal?</h4>
+  <p>Decimal to octal conversion is used in computer science, electronics, and software engineering where base-8 notation is required. This tool helps students, developers, and engineers easily convert decimal numbers to octal format.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this decimal to octal converter free?</strong> Yes! It’s 100% free and works instantly without signup.</li>
+    <li><strong>Does it work offline?</strong> The conversion happens in your browser. No data is sent to any server.</li>
+    <li><strong>Can I convert negative numbers?</strong> Yes! The tool supports positive and negative decimal numbers.</li>
+  </ul>
+
+  <!-- 底部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free Decimal to Octal Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertDecimalToOctal() {
+    const decimalValue = document.getElementById('decimalInput').value;
+    if (decimalValue === '') {
+      document.getElementById('octalResult').textContent = 'Please enter a decimal number.';
+      return;
+    }
+
+    const dec = parseInt(decimalValue, 10);
+    if (isNaN(dec)) {
+      document.getElementById('octalResult').textContent = 'Invalid input. Please enter a valid decimal number.';
+      return;
+    }
+
+    const octal = dec.toString(8);
+    document.getElementById('octalResult').textContent = octal;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online knots to mph converter. Instantly convert knots to miles per hour (MPH) — fast, free, secure, and no signup required.">
+  <title>Convert Knots to MPH Online — Free Instant Knots to Miles Per Hour Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert Knots to MPH Online</h1>
+  <p>Free, Instant, No Signup — The Best Knots to Miles Per Hour Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+ -->
+  <h2>Free Knots to MPH Converter</h2>
+  <p>Enter knots value below to convert it instantly to miles per hour (MPH). This tool is fast, free, and secure with no registration required.</p>
+
+  <label for="knotsInput">Knots</label>
+  <input type="number" id="knotsInput" placeholder="e.g. 20" oninput="convertKnotsToMPH()" />
+
+  <button onclick="convertKnotsToMPH()">Convert to MPH</button>
+
+  <h3>MPH Output</h3>
+  <div id="mphResult" class="result">Your MPH value will appear here.</div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+  <h4>Why Convert Knots to MPH?</h4>
+  <p>Knots to MPH conversion is commonly used in aviation, marine, and weather applications. This tool helps pilots, sailors, and meteorologists convert speeds quickly and accurately.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this knots to mph converter free?</strong> Yes! It’s 100% free and works instantly in your browser.</li>
+    <li><strong>What is the conversion factor?</strong> 1 knot = 1.15078 miles per hour (MPH).</li>
+    <li><strong>Does it work offline?</strong> Yes! The conversion happens locally in your browser. No data is sent to any server.</li>
+  </ul>
+
+  <!-- 底部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free Knots to MPH Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertKnotsToMPH() {
+    const knots = parseFloat(document.getElementById('knotsInput').value);
+    if (isNaN(knots)) {
+      document.getElementById('mphResult').textContent = 'Please enter a valid number of knots.';
+      return;
+    }
+    const mph = (knots * 1.15078).toFixed(4);
+    document.getElementById('mphResult').textContent = `${mph} MPH`;
+  }
+</script>
+
+</body>
+</html>
