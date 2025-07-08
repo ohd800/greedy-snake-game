@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Free online RGBA to HEX converter. Instantly convert RGBA color codes to HEX values with alpha transparency — fast, free, no signup.">
+  <title>Convert RGBA to HEX Color Online — Free Instant Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="number"], input[type="text"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #005fa3; }
+    .color-preview { width: 100%; height: 50px; border-radius: 6px; margin-top: 1em; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert RGBA to HEX Online</h1>
+  <p>Free, Instant, No Signup — The Best RGBA to HEX Converter</p>
+</header>
+
+<div class="container">
+
+  <!-- 顶部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <h2>Free Online RGBA to HEX Color Converter</h2>
+  <p>Enter your RGBA values to get the HEX color code (with alpha). Works instantly, no signup needed.</p>
+
+  <label for="rVal">R (0-255)</label>
+  <input type="number" id="rVal" min="0" max="255" placeholder="e.g. 255" oninput="convertRGBAtoHex()"/>
+
+  <label for="gVal">G (0-255)</label>
+  <input type="number" id="gVal" min="0" max="255" placeholder="e.g. 99" oninput="convertRGBAtoHex()"/>
+
+  <label for="bVal">B (0-255)</label>
+  <input type="number" id="bVal" min="0" max="255" placeholder="e.g. 71" oninput="convertRGBAtoHex()"/>
+
+  <label for="aVal">A (0 to 1)</label>
+  <input type="text" id="aVal" placeholder="e.g. 0.5" oninput="convertRGBAtoHex()"/>
+
+  <button onclick="convertRGBAtoHex()">Convert to HEX</button>
+
+  <h3>HEX Output</h3>
+  <div id="hexResult" class="result">Your HEX code will appear here.</div>
+  <div id="colorPreview" class="color-preview"></div>
+
+  <!-- 中部广告位 
+  <div class="ad-slot">
+    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+  <h4>Why Convert RGBA to HEX?</h4>
+  <p>RGBA to HEX conversion allows designers and developers to convert transparent colors into HEX format, useful for CSS, HTML, and frontend tools. For example, RGBA(255, 99, 71, 0.5) becomes <strong>#FF634780</strong>.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Is this RGBA to HEX converter free?</strong> Yes! It’s 100% free and works directly in your browser.</li>
+    <li><strong>Does it support transparency?</strong> Yes, it includes the alpha channel in the HEX output (e.g. <code>#FF634780</code>).</li>
+    <li><strong>Can I preview the color?</strong> Yes! The color preview updates automatically.</li>
+  </ul>
+
+  <!-- 底部广告位 
+  <div class="ad-slot">
+    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
+      [Your Google Ad Here]
+    </div>
+  </div>
+-->
+
+</div>
+
+<footer>
+  &copy; 2025 www.dhh5.com — Free RGBA to HEX Color Converter | Instant, Secure, No Signup
+</footer>
+
+<script>
+  function convertRGBAtoHex() {
+    const r = parseInt(document.getElementById('rVal').value) || 0;
+    const g = parseInt(document.getElementById('gVal').value) || 0;
+    const b = parseInt(document.getElementById('bVal').value) || 0;
+    const a = parseFloat(document.getElementById('aVal').value);
+    const alpha = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+
+    const toHex = (n) => {
+      const hex = Math.round(n).toString(16).toUpperCase();
+      return hex.length === 1 ? '0' + hex : hex;
+    };
+
+    const hexCode = `#${toHex(r)}${toHex(g)}${toHex(b)}${toHex(alpha * 255)}`;
+    document.getElementById('hexResult').textContent = hexCode;
+    document.getElementById('colorPreview').style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  }
+</script>
+
+</body>
+</html>

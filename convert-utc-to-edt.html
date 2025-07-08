@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Convert UTC time to Eastern Daylight Time (EDT) instantly online. Free UTC to EDT time zone converter tool." />
+  <title>Convert UTC to EDT Time — Free Online Time Zone Converter</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 1em; }
+    input[type="time"], input[type="date"] { 
+      width: 100%; 
+      padding: 0.8em; 
+      font-size: 1em; 
+      border: 1px solid #ccc; 
+      border-radius: 6px; 
+      margin-bottom: 1em; 
+      box-sizing: border-box;
+    }
+    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
+    .ad-slot { text-align: center; margin: 1em 0; }
+    button {
+      background: #007ACC; 
+      color: #fff; 
+      padding: 0.6em 1.2em; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer;
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+    button:hover { background: #005fa3; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Convert UTC to EDT Online</h1>
+  <p>Instantly convert Coordinated Universal Time (UTC) to Eastern Daylight Time (EDT).</p>
+</header>
+
+<div class="container">
+
+  <!-- Top Ad Slot -->
+  <div class="ad-slot">
+    <!-- Your Google Ad Here -->
+  </div>
+
+  <label for="utcTime">Enter UTC Time (24-hour format):</label>
+  <input type="time" id="utcTime" value="12:00" oninput="convertUTCtoEDT()" />
+
+  <label for="utcDate">Select Date (for daylight saving accuracy):</label>
+  <input type="date" id="utcDate" value="2025-07-08" onchange="convertUTCtoEDT()" />
+
+  <button onclick="convertUTCtoEDT()">Convert to EDT</button>
+
+  <div id="edtResult" class="result">EDT Time: --:--</div>
+
+  <!-- Middle Ad Slot -->
+  <div class="ad-slot">
+    <!-- Your Google Ad Here -->
+  </div>
+
+  <h3>Why convert UTC to EDT?</h3>
+  <p>Eastern Daylight Time (EDT) is used in locations like New York and Toronto during daylight saving time. This converter helps you quickly convert UTC time to EDT with correct daylight saving adjustments.</p>
+
+  <h4>FAQs</h4>
+  <ul>
+    <li><strong>Does this tool consider daylight saving time?</strong> Yes, it automatically adjusts for DST based on the selected date.</li>
+    <li><strong>Is this converter free?</strong> Absolutely, it’s free and works instantly in your browser.</li>
+  </ul>
+
+  <!-- Bottom Ad Slot -->
+  <div class="ad-slot">
+    <!-- Your Google Ad Here -->
+  </div>
+
+</div>
+
+<footer style="text-align:center; font-size:0.9em; color:#777; margin-top:2em; padding:1em; border-top:1px solid #ccc;">
+  &copy; 2025 www.dhh5.com — UTC to EDT Converter | Free Time Zone Tools
+</footer>
+
+<script>
+  function convertUTCtoEDT() {
+    const time = document.getElementById('utcTime').value;
+    const date = document.getElementById('utcDate').value;
+    const output = document.getElementById('edtResult');
+
+    if (!time || !date) {
+      output.textContent = 'EDT Time: --:--';
+      return;
+    }
+
+    // Create Date object in UTC
+    const utcDate = new Date(`${date}T${time}:00Z`);
+
+    // Calculate if DST applies in US Eastern time zone on this date
+    // US Eastern Time is UTC-5 normally, UTC-4 during DST
+    // DST starts 2nd Sunday March, ends 1st Sunday November
+    function isDST(d) {
+      const year = d.getUTCFullYear();
+
+      // Second Sunday in March
+      const march = new Date(Date.UTC(year, 2, 1));
+      const dayMarch = march.getUTCDay();
+      const secondSundayMarch = 8 + ((7 - dayMarch) % 7);
+
+      // First Sunday in November
+      const nov = new Date(Date.UTC(year, 10, 1));
+      const dayNov = nov.getUTCDay();
+      const firstSundayNov = 1 + ((7 - dayNov) % 7);
+
+      const dstStart = Date.UTC(year, 2, secondSundayMarch, 7); // 2AM EST == 7AM UTC
+      const dstEnd = Date.UTC(year, 10, firstSundayNov, 6); // 2AM EDT == 6AM UTC
+
+      const timeMs = d.getTime();
+
+      return timeMs >= dstStart && timeMs < dstEnd;
+    }
+
+    const dst = isDST(utcDate);
+    const offsetHours = dst ? -4 : -5;
+
+    // Convert UTC to EDT by adding offset
+    const edtTimeMs = utcDate.getTime() + offsetHours * 60 * 60 * 1000;
+    const edtDate = new Date(edtTimeMs);
+
+    const hours = edtDate.getUTCHours().toString().padStart(2, '0');
+    const minutes = edtDate.getUTCMinutes().toString().padStart(2, '0');
+
+    output.textContent = `EDT Time: ${hours}:${minutes}`;
+  }
+
+  window.onload = convertUTCtoEDT;
+</script>
+
+</body>
+</html>
