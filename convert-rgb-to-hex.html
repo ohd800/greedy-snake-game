@@ -1,105 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online RGB to HEX converter. Instantly convert RGB color codes to HEX values — fast, free, no signup.">
-  <title>Convert RGB to HEX Color Online — Free Instant Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-    .color-preview { width: 100%; height: 50px; border-radius: 6px; margin-top: 1em; border: 1px solid #ccc; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RGB to HEX Converter — Free Color Code Tool</title>
+<meta name="description" content="Convert RGB to HEX and HEX to RGB instantly. Free color converter with live preview, input validation and one-click copy. No signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-rgb-to-hex.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-rgb-to-hex.html">
+<meta property="og:title" content="RGB to HEX Converter — Free Color Code Tool">
+<meta property="og:description" content="Convert RGB to HEX and back instantly, with live preview and one-click copy.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RGB to HEX Converter">
+<meta name="twitter:description" content="Two-way RGB/HEX color conversion with live preview and copy.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "RGB to HEX Converter",
+      "url": "https://www.dhh5.com/convert-rgb-to-hex.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Color tools", "item": "https://www.dhh5.com/#color" },
+        { "@type": "ListItem", "position": 3, "name": "RGB to HEX" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert RGB to HEX by hand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Convert each of the red, green and blue values (0-255) to a two digit base-16 number, then join them with a leading hash. For example rgb(11, 107, 203) becomes #0B6BCB." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I enter a value above 255?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Values are clamped to the valid 0-255 range, so 300 is treated as 255. The converter shows a note whenever clamping occurs so you always know the real output." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this tool support 3-digit HEX codes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Shorthand codes such as #0af are expanded to #00AAFF, and you can enter them with or without the leading hash." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert RGB to HEX Online</h1>
-  <p>Free, Instant, No Signup — The Best RGB to HEX Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#color">Color tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#color">Color tools</a></li>
+      <li>RGB to HEX</li>
+    </ol>
+  </nav>
+
+  <h1>RGB to HEX Converter</h1>
+  <p>Convert between <strong>RGB</strong> and <strong>HEX</strong> color values in both directions,
+     with a live preview. Out-of-range values are clamped rather than silently producing a broken color.</p>
+
+  <div class="card">
+    <h2>RGB → HEX</h2>
+    <div class="field">
+      <label for="rgbInput">RGB value</label>
+      <input type="text" id="rgbInput" placeholder="e.g. 11, 107, 203" autocomplete="off" inputmode="numeric">
+      <p class="hint">Three numbers from 0 to 255, separated by commas or spaces.</p>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">HEX color</div>
+      <div class="result" id="hexResult" aria-live="polite">Enter an RGB value to see the HEX code.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#hexResult">Copy HEX</button>
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#cssResult">Copy CSS</button>
+      <span class="hint" id="clampNote" aria-live="polite"></span>
+    </div>
+
+    <p class="hint" id="cssResult" aria-label="CSS declaration"></p>
+
+    <div class="swatch"><div class="swatch-inner" id="swatch"></div></div>
+  </div>
+
+  <div class="card">
+    <h2>HEX → RGB</h2>
+    <div class="field">
+      <label for="hexInput">HEX value</label>
+      <input type="text" id="hexInput" placeholder="e.g. #0B6BCB or 0af" autocomplete="off" spellcheck="false">
+      <p class="hint">3 or 6 digits, with or without the leading <code>#</code>.</p>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">RGB color</div>
+      <div class="result" id="rgbResult" aria-live="polite">Enter a HEX value to see the RGB triplet.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#rgbResult">Copy RGB</button>
     </div>
   </div>
--->
 
-  <!-- 工具部分 -->
-  <h2>Free Online RGB to HEX Color Converter</h2>
-  <p>Enter your RGB values to get the HEX color code. Works instantly, no signup needed.</p>
-
-  <label for="rVal">R (0-255)</label>
-  <input type="number" id="rVal" min="0" max="255" placeholder="e.g. 255" oninput="convertRGBtoHex()"/>
-
-  <label for="gVal">G (0-255)</label>
-  <input type="number" id="gVal" min="0" max="255" placeholder="e.g. 0" oninput="convertRGBtoHex()"/>
-
-  <label for="bVal">B (0-255)</label>
-  <input type="number" id="bVal" min="0" max="255" placeholder="e.g. 128" oninput="convertRGBtoHex()"/>
-
-  <button onclick="convertRGBtoHex()">Convert to HEX</button>
-
-  <h3>HEX Output</h3>
-  <div id="hexResult" class="result">Your HEX code will appear here.</div>
-  <div id="colorPreview" class="color-preview"></div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-
-  <h4>Why Convert RGB to HEX?</h4>
-  <p>RGB to HEX conversion helps designers and developers translate color values between formats used in CSS, HTML, and design software. For example, RGB(255, 0, 128) becomes <strong>#FF0080</strong>.</p>
-
-  <h4>FAQs</h4>
+  <h2>How RGB to HEX conversion works</h2>
+  <p>HEX is simply base-16 notation for the same three channels. Each channel (0–255) becomes a
+     two-digit hexadecimal pair:</p>
+  <p><code>#RRGGBB</code> &nbsp;where each pair = <code>value.toString(16).padStart(2, '0')</code></p>
+  <p><strong>Worked example.</strong> Convert <code>rgb(11, 107, 203)</code>:</p>
   <ul>
-    <li><strong>Is this RGB to HEX converter free?</strong> Yes! It’s 100% free and works right in your browser.</li>
-    <li><strong>Does it support opacity?</strong> This tool converts RGB to HEX. For RGBA or HEX with alpha, check our <a href="convert-rgba-to-hex.html">RGBA to HEX tool</a>.</li>
-    <li><strong>Can I see the color preview?</strong> Yes! The color preview updates as you input values.</li>
+    <li>Red 11 &nbsp;→ <code>11 ÷ 16 = 0</code> remainder <code>11</code> → <code>0B</code></li>
+    <li>Green 107 → <code>107 ÷ 16 = 6</code> remainder <code>11</code> → <code>6B</code></li>
+    <li>Blue 203 → <code>203 ÷ 16 = 12</code> remainder <code>11</code> → <code>CB</code></li>
+  </ul>
+  <p>Result: <code>#0B6BCB</code></p>
+
+  <h2>Common colors</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Name</th><th>HEX</th><th class="num">R</th><th class="num">G</th><th class="num">B</th></tr></thead>
+      <tbody>
+        <tr><td>Black</td><td><code>#000000</code></td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
+        <tr><td>White</td><td><code>#FFFFFF</code></td><td class="num">255</td><td class="num">255</td><td class="num">255</td></tr>
+        <tr><td>Red</td><td><code>#FF0000</code></td><td class="num">255</td><td class="num">0</td><td class="num">0</td></tr>
+        <tr><td>Lime</td><td><code>#00FF00</code></td><td class="num">0</td><td class="num">255</td><td class="num">0</td></tr>
+        <tr><td>Blue</td><td><code>#0000FF</code></td><td class="num">0</td><td class="num">0</td><td class="num">255</td></tr>
+        <tr><td>Cyan</td><td><code>#00FFFF</code></td><td class="num">0</td><td class="num">255</td><td class="num">255</td></tr>
+        <tr><td>Magenta</td><td><code>#FF00FF</code></td><td class="num">255</td><td class="num">0</td><td class="num">255</td></tr>
+        <tr><td>Yellow</td><td><code>#FFFF00</code></td><td class="num">255</td><td class="num">255</td><td class="num">0</td></tr>
+        <tr><td>Gray</td><td><code>#808080</code></td><td class="num">128</td><td class="num">128</td><td class="num">128</td></tr>
+        <tr><td>Crimson</td><td><code>#DC143C</code></td><td class="num">220</td><td class="num">20</td><td class="num">60</td></tr>
+        <tr><td>Teal</td><td><code>#008080</code></td><td class="num">0</td><td class="num">128</td><td class="num">128</td></tr>
+        <tr><td>Navy</td><td><code>#000080</code></td><td class="num">0</td><td class="num">0</td><td class="num">128</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How do I convert RGB to HEX by hand?</dt>
+    <dd>Convert each of the red, green and blue values (0–255) to a two digit base-16 number, then join them with a leading hash. For example rgb(11, 107, 203) becomes #0B6BCB.</dd>
+
+    <dt>What happens if I enter a value above 255?</dt>
+    <dd>Values are clamped to the valid 0–255 range, so 300 is treated as 255. The converter shows a note whenever clamping occurs so you always know the real output.</dd>
+
+    <dt>Does this tool support 3-digit HEX codes?</dt>
+    <dd>Yes. Shorthand codes such as #0af are expanded to #00AAFF, and you can enter them with or without the leading hash.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The conversion runs entirely in your browser; no color value is ever sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-rgba-to-hex.html">RGBA → HEX</a></h3><p>Convert colors that include an alpha channel.</p></li>
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-decimal-to-octal.html">Decimal → Octal</a></h3><p>Base-10 to base-8 number conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
     </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
   </div>
--->
-
-</div>
-
-<footer>
-  &copy; 2025 www.dhh5.com — Free RGB to HEX Color Converter | Instant, Secure, No Signup
 </footer>
 
 <script>
-  function convertRGBtoHex() {
-    const r = parseInt(document.getElementById('rVal').value) || 0;
-    const g = parseInt(document.getElementById('gVal').value) || 0;
-    const b = parseInt(document.getElementById('bVal').value) || 0;
+/* ---------------------------------------------------------------------------
+   Fix: the original version did no range checking, so rgb(999,0,0) produced
+   the malformed value "#3E70000". We now clamp to 0-255 and tell the user
+   when clamping happened.
+--------------------------------------------------------------------------- */
+function parseRGB(str) {
+  var nums = String(str).match(/-?\d+(\.\d+)?/g);
+  if (!nums || nums.length < 3) return null;
+  var ch = nums.slice(0, 3).map(function (n) { return parseFloat(n); });
+  if (ch.some(function (n) { return isNaN(n); })) return null;
+  var clamped = ch.map(function (n) { return Math.min(255, Math.max(0, Math.round(n))); });
+  return {
+    r: clamped[0], g: clamped[1], b: clamped[2],
+    wasClamped: clamped.some(function (v, i) { return v !== Math.round(ch[i]); })
+  };
+}
 
-    const toHex = (n) => {
-      const hex = n.toString(16).toUpperCase();
-      return hex.length === 1 ? '0' + hex : hex;
-    };
+function toHexPair(n) {
+  return n.toString(16).toUpperCase().padStart(2, '0');
+}
 
-    const hexCode = `#${toHex(r)}${toHex(g)}${toHex(b)}`;
-    document.getElementById('hexResult').textContent = hexCode;
-    document.getElementById('colorPreview').style.backgroundColor = hexCode;
+function updateFromRGB() {
+  var out = document.getElementById('hexResult');
+  var note = document.getElementById('clampNote');
+  var css = document.getElementById('cssResult');
+  var swatch = document.getElementById('swatch');
+  var raw = document.getElementById('rgbInput').value.trim();
+
+  if (!raw) {
+    out.textContent = 'Enter an RGB value to see the HEX code.';
+    out.classList.remove('error');
+    note.textContent = '';
+    css.textContent = '';
+    swatch.style.background = 'transparent';
+    return;
   }
+
+  var c = parseRGB(raw);
+  if (!c) {
+    out.textContent = 'Please enter three numbers, e.g. 11, 107, 203';
+    out.classList.add('error');
+    note.textContent = '';
+    css.textContent = '';
+    swatch.style.background = 'transparent';
+    return;
+  }
+
+  var hex = '#' + toHexPair(c.r) + toHexPair(c.g) + toHexPair(c.b);
+  out.textContent = hex;
+  out.classList.remove('error');
+  css.textContent = 'background-color: ' + hex + ';  /* rgb(' + c.r + ', ' + c.g + ', ' + c.b + ') */';
+  swatch.style.background = hex;
+  note.textContent = c.wasClamped
+    ? 'Values were outside 0–255 and have been clamped.'
+    : '';
+}
+
+/* HEX -> RGB ------------------------------------------------------------ */
+function parseHEX(str) {
+  var s = String(str).trim().replace(/^#/, '');
+  if (/^[0-9a-fA-F]{3}$/.test(s)) {
+    s = s.split('').map(function (ch) { return ch + ch; }).join('');
+  }
+  if (!/^[0-9a-fA-F]{6}$/.test(s)) return null;
+  return {
+    r: parseInt(s.slice(0, 2), 16),
+    g: parseInt(s.slice(2, 4), 16),
+    b: parseInt(s.slice(4, 6), 16)
+  };
+}
+
+function updateFromHEX() {
+  var out = document.getElementById('rgbResult');
+  var raw = document.getElementById('hexInput').value.trim();
+
+  if (!raw) {
+    out.textContent = 'Enter a HEX value to see the RGB triplet.';
+    out.classList.remove('error');
+    return;
+  }
+  var c = parseHEX(raw);
+  if (!c) {
+    out.textContent = 'Please enter a 3 or 6 digit HEX value, e.g. #0B6BCB';
+    out.classList.add('error');
+    return;
+  }
+  out.textContent = 'rgb(' + c.r + ', ' + c.g + ', ' + c.b + ')';
+  out.classList.remove('error');
+}
+
+/* Wire up: live conversion + shareable URL state */
+var rgbState = dhUrlState('rgb', function (v) {
+  document.getElementById('rgbInput').value = v;
+  updateFromRGB();
+});
+document.getElementById('rgbInput').addEventListener('input', function () {
+  rgbState.save(this.value);
+  updateFromRGB();
+});
+
+var hexState = dhUrlState('hex', function (v) {
+  document.getElementById('hexInput').value = decodeURIComponent(v);
+  updateFromHEX();
+});
+document.getElementById('hexInput').addEventListener('input', function () {
+  hexState.save(encodeURIComponent(this.value));
+  updateFromHEX();
+});
 </script>
 
 </body>

@@ -1,92 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online UTC to EST time converter. Convert UTC to Eastern Time (EST) instantly — no signup, fast and easy.">
-  <title>Convert UTC to EST Time Online — Free Instant Time Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="datetime-local"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UTC to EST Converter — Free Online Time Zone Tool</title>
+<meta name="description" content="Convert UTC to EST (US Eastern Time) instantly. Daylight saving time is handled automatically, so you get EST or EDT correctly. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-utc-to-est.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-utc-to-est.html">
+<meta property="og:title" content="UTC to EST Converter — Free Online Time Zone Tool">
+<meta property="og:description" content="Convert UTC to EST (US Eastern Time) instantly, with daylight saving handled automatically.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UTC to EST Converter">
+<meta name="twitter:description" content="Convert UTC to US Eastern Time instantly, with daylight saving handled automatically.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "UTC to EST Converter",
+      "url": "https://www.dhh5.com/convert-utc-to-est.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Time zone tools", "item": "https://www.dhh5.com/#time" },
+        { "@type": "ListItem", "position": 3, "name": "UTC to EST" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is EST the same as EDT?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. EST is Eastern Standard Time (UTC-5), used in winter, while EDT is Eastern Daylight Time (UTC-4), used during daylight saving. This converter detects which one applies to your date and labels the result accordingly." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current offset between UTC and Eastern Time?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Eastern Time is UTC-5 during Eastern Standard Time and UTC-4 during Eastern Daylight Time. Daylight saving in the US runs from the second Sunday in March to the first Sunday in November." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this converter free and private?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is completely free, requires no signup, and all calculations run locally in your browser. Nothing you enter is uploaded." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert UTC to EST Time Online</h1>
-  <p>Free, Instant, No Signup — The Best UTC to Eastern Time Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#time">Time tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#time">Time zone tools</a></li>
+      <li>UTC to EST</li>
+    </ol>
+  </nav>
+
+  <h1>UTC to EST Converter</h1>
+  <p>Convert Coordinated Universal Time (UTC) to US Eastern Time. Daylight saving is detected
+     automatically, so you always get the right label — <strong>EST</strong> or <strong>EDT</strong>.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="utcInput">UTC date and time</label>
+      <input type="datetime-local" id="utcInput" step="60">
+      <p class="hint">Times are interpreted as UTC, regardless of your device's own time zone.</p>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="convert()">Convert</button>
+      <button type="button" class="btn btn-secondary" onclick="useNow()">Use current time</button>
+    </div>
+
+    <div class="result-block" style="margin-top:20px">
+      <div class="result-label">US Eastern Time</div>
+      <div class="result" id="estResult" aria-live="polite">Pick a UTC date and time to see the result.</div>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">UTC offset applied</div>
+      <div class="result" id="offsetResult" aria-live="polite">—</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#estResult">Copy result</button>
     </div>
   </div>
- -->
-  <h2>Free Online UTC to EST Time Converter</h2>
-  <p>Select a UTC time below to convert it to Eastern Standard Time (EST). Fast, free, and no signup required.</p>
 
-  <label for="utcTime">Select UTC Time</label>
-  <input type="datetime-local" id="utcTime" onchange="convertUTCtoEST()" />
-
-  <button onclick="convertUTCtoEST()">Convert to EST</button>
-
-  <h3>EST Output</h3>
-  <div id="estResult" class="result">Your EST time will appear here.</div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-  <h4>Why Convert UTC to EST?</h4>
-  <p>UTC to EST conversion is essential for scheduling meetings, programming tasks, and coordinating across time zones. This tool lets you convert UTC to Eastern Standard Time easily and instantly.</p>
-
-  <h4>FAQs</h4>
+  <h2>How the conversion works</h2>
+  <p>Eastern Time is not a single fixed offset. The United States observes daylight saving time,
+     so the offset changes twice a year:</p>
   <ul>
-    <li><strong>Is this UTC to EST converter free?</strong> Yes! It’s completely free and works without any registration.</li>
-    <li><strong>Does this tool consider daylight saving time?</strong> No, this converts UTC to standard EST (UTC-5). For daylight saving adjustments, use our <a href="convert-utc-to-edt.html">UTC to EDT converter</a>.</li>
-    <li><strong>Is my data stored?</strong> No. All conversion happens in your browser, and no data is sent to any server.</li>
+    <li><strong>Eastern Standard Time (EST)</strong> — UTC−5, roughly November to March</li>
+    <li><strong>Eastern Daylight Time (EDT)</strong> — UTC−4, roughly March to November</li>
+  </ul>
+  <p>So:</p>
+  <p><code>Eastern Time = UTC + offset</code> &nbsp;where&nbsp; <code>offset = −5</code> (EST) or <code>−4</code> (EDT)</p>
+  <p><strong>Worked example.</strong> 12:00 UTC on 31 August 2026 falls inside daylight saving,
+     so the offset is −4:</p>
+  <p><code>12:00 − 4h = 08:00 EDT</code></p>
+  <p>The same 12:00 UTC on 15 January 2026 falls outside daylight saving, so the offset is −5:</p>
+  <p><code>12:00 − 5h = 07:00 EST</code></p>
+
+  <h2>Common UTC to Eastern conversions</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>UTC time</th><th>In summer (EDT, UTC−4)</th><th>In winter (EST, UTC−5)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="num">00:00</td><td class="num">20:00 (prev. day)</td><td class="num">19:00 (prev. day)</td></tr>
+        <tr><td class="num">04:00</td><td class="num">00:00</td><td class="num">23:00 (prev. day)</td></tr>
+        <tr><td class="num">08:00</td><td class="num">04:00</td><td class="num">03:00</td></tr>
+        <tr><td class="num">12:00</td><td class="num">08:00</td><td class="num">07:00</td></tr>
+        <tr><td class="num">16:00</td><td class="num">12:00</td><td class="num">11:00</td></tr>
+        <tr><td class="num">20:00</td><td class="num">16:00</td><td class="num">15:00</td></tr>
+        <tr><td class="num">23:00</td><td class="num">19:00</td><td class="num">18:00</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>Is EST the same as EDT?</dt>
+    <dd>No. EST is Eastern Standard Time (UTC−5), used in winter, while EDT is Eastern Daylight Time (UTC−4), used during daylight saving. This converter detects which one applies to your date and labels the result accordingly.</dd>
+
+    <dt>What is the current offset between UTC and Eastern Time?</dt>
+    <dd>Eastern Time is UTC−5 during Eastern Standard Time and UTC−4 during Eastern Daylight Time. Daylight saving in the US runs from the second Sunday in March to the first Sunday in November.</dd>
+
+    <dt>Is this converter free and private?</dt>
+    <dd>Yes. It is completely free, requires no signup, and all calculations run locally in your browser. Nothing you enter is uploaded.</dd>
+
+    <dt>Which cities use Eastern Time?</dt>
+    <dd>New York, Toronto, Miami, Philadelphia, Boston, Atlanta, Washington D.C. and Detroit all observe Eastern Time. Note that not every location in the Eastern time zone observes daylight saving.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-utc-to-edt.html">UTC → EDT</a></h3><p>Convert UTC to Eastern Daylight Time (UTC−4).</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay and reverb timing.</p></li>
+    <li class="tool-card"><h3><a href="/convert-knots-to-mph.html">Knots → MPH</a></h3><p>Speed conversion for aviation and marine use.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-</div>
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free UTC to EST Time Converter | Instant, Secure, No Signup
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertUTCtoEST() {
-    const utcInput = document.getElementById('utcTime').value;
-    if (!utcInput) {
-      document.getElementById('estResult').textContent = 'Please select a UTC date and time.';
-      return;
-    }
+/* ---------------------------------------------------------------------------
+   Correct approach: never hand-roll the offset.
+   Intl.DateTimeFormat with an IANA time zone resolves daylight saving for us,
+   and timeZoneName:'short' returns the correct "EST" / "EDT" abbreviation.
+   (The previous version subtracted 5 hours AND then formatted in
+   America/New_York, applying the offset twice — a 5 hour error.)
+--------------------------------------------------------------------------- */
+var TZ = 'America/New_York';
 
-    const utcDate = new Date(utcInput + 'Z'); // Ensures it's treated as UTC
-    const estDate = new Date(utcDate.getTime() - (5 * 60 * 60 * 1000)); // UTC-5
+var fmtFull = new Intl.DateTimeFormat('en-US', {
+  timeZone: TZ,
+  weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+  hour: 'numeric', minute: '2-digit', hour12: true
+});
+var fmtAbbr = new Intl.DateTimeFormat('en-US', {
+  timeZone: TZ, timeZoneName: 'short'
+});
 
-    const estString = estDate.toLocaleString('en-US', { timeZone: 'America/New_York', hour12: true });
-    document.getElementById('estResult').textContent = estString + ' EST';
+/* offsetText: derive the label + offset from the formatted parts */
+function easternParts(date) {
+  var parts = fmtAbbr.formatToParts(date);
+  var abbr = '';
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].type === 'timeZoneName') { abbr = parts[i].value; break; }
   }
+  // Fallback for browsers that return generic labels like "GMT-4"
+  var offsetHours;
+  if (abbr === 'EDT') offsetHours = -4;
+  else if (abbr === 'EST') offsetHours = -5;
+  else {
+    var m = /GMT([+-])(\d{1,2})/.exec(abbr);
+    offsetHours = m ? (m[1] === '-' ? -1 : 1) * parseInt(m[2], 10) : -5;
+  }
+  return { abbr: abbr, offsetHours: offsetHours };
+}
+
+function convert() {
+  var raw = document.getElementById('utcInput').value;
+  var out = document.getElementById('estResult');
+  var offOut = document.getElementById('offsetResult');
+
+  if (!raw) {
+    out.textContent = 'Please choose a UTC date and time.';
+    out.classList.add('error');
+    offOut.textContent = '—';
+    offOut.classList.remove('error');
+    return;
+  }
+
+  // datetime-local has no zone suffix; append Z to pin it to UTC.
+  var date = new Date(raw + 'Z');
+  if (isNaN(date.getTime())) {
+    out.textContent = 'That date could not be read. Please try again.';
+    out.classList.add('error');
+    offOut.textContent = '—';
+    return;
+  }
+
+  var info = easternParts(date);
+  out.textContent = fmtFull.format(date) + '  (' + info.abbr + ')';
+  out.classList.remove('error');
+  offOut.textContent = 'UTC' + (info.offsetHours < 0 ? '−' : '+') +
+                       Math.abs(info.offsetHours) + ' — ' + info.abbr;
+  offOut.classList.remove('error');
+}
+
+function useNow() {
+  var now = new Date();
+  // Build a UTC-local string matching the datetime-local format
+  var pad = function (n) { return String(n).padStart(2, '0'); };
+  document.getElementById('utcInput').value =
+    now.getUTCFullYear() + '-' + pad(now.getUTCMonth() + 1) + '-' + pad(now.getUTCDate()) +
+    'T' + pad(now.getUTCHours()) + ':' + pad(now.getUTCMinutes());
+  convert();
+}
+
+/* Recalculate as soon as the input changes, and keep ?utc= in sync for sharing */
+var state = dhUrlState('utc', function (v) {
+  document.getElementById('utcInput').value = v;
+  convert();
+});
+document.getElementById('utcInput').addEventListener('input', function () {
+  state.save(this.value);
+  convert();
+});
+document.getElementById('utcInput').addEventListener('change', convert);
 </script>
 
 </body>

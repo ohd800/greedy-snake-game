@@ -1,102 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online Epoch to Date converter. Instantly convert Unix timestamps (epoch time) to human-readable dates in your local timezone — fast, secure, no signup.">
-  <title>Convert Epoch to Date Online — Free Unix Timestamp Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; word-break: break-word; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unix Timestamp Converter — Epoch to Date</title>
+<meta name="description" content="Convert a Unix epoch timestamp to a readable date, shown in both UTC and your local time zone. Accepts seconds or milliseconds. Free, no signup.">
+<link rel="canonical" href="https://www.dhh5.com/convert-epoch-to-date.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-epoch-to-date.html">
+<meta property="og:title" content="Unix Timestamp Converter — Epoch to Date">
+<meta property="og:description" content="Convert epoch to a readable date in UTC and your local time zone.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unix Timestamp Converter">
+<meta name="twitter:description" content="Convert epoch to a readable date in UTC and your local time zone.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Unix Timestamp Converter",
+      "url": "https://www.dhh5.com/convert-epoch-to-date.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Developer tools", "item": "https://www.dhh5.com/#developer" },
+        { "@type": "ListItem", "position": 3, "name": "Epoch to Date" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are epoch timestamps in seconds or milliseconds?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Classic Unix time counts seconds since 1 January 1970 UTC. JavaScript and many modern APIs use milliseconds instead. This tool detects which one you meant from the size of the number, and tells you which it assumed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which time zone is the result shown in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both. The converter shows UTC and your device's local time side by side, each clearly labelled, so there is no ambiguity about which one you are reading." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current Unix timestamp?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Press the \"Use current time\" button to drop the current epoch value into the box. It updates from your device clock." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert Epoch to Date Online</h1>
-  <p>Free, Instant, No Signup — The Best Unix Timestamp to Date Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#developer">Developer tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#developer">Developer tools</a></li>
+      <li>Epoch to Date</li>
+    </ol>
+  </nav>
+
+  <h1>Unix Timestamp Converter</h1>
+  <p>Convert an epoch timestamp into a readable date. Results are shown in
+     <strong>UTC and your local time zone</strong>, clearly labelled — so there is no guesswork
+     about which one you are looking at.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="epochInput">Unix timestamp</label>
+      <input type="text" id="epochInput" placeholder="e.g. 1788171007" autocomplete="off" inputmode="numeric">
+      <p class="hint">Seconds or milliseconds — the tool detects which one from the size of the number.</p>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="convert()">Convert</button>
+      <button type="button" class="btn btn-secondary" onclick="useNow()">Use current time</button>
+      <span class="hint" id="unit" aria-live="polite"></span>
+    </div>
+
+    <div class="result-block" style="margin-top:20px">
+      <div class="result-label">UTC</div>
+      <div class="result" id="utcResult" aria-live="polite">Enter a timestamp to see the date.</div>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">Your local time</div>
+      <div class="result" id="localResult" aria-live="polite">—</div>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">ISO 8601</div>
+      <div class="result" id="isoResult" aria-live="polite">—</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#utcResult">Copy UTC</button>
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#isoResult">Copy ISO</button>
     </div>
   </div>
--->
 
-  <h2>Free Epoch to Human-Readable Date Converter</h2>
-  <p>Enter a Unix timestamp (epoch time) below to convert it to a human-readable date in your local timezone. This tool is fast, free, and requires no registration.</p>
+  <h2>How epoch time works</h2>
+  <p>A Unix timestamp counts the number of seconds elapsed since
+     <strong>1 January 1970 at 00:00:00 UTC</strong>, known as the epoch. It is a single number with
+     no time zone attached, which is exactly why it is useful for storing dates — and why converting
+     it back requires you to say which zone you want.</p>
+  <p><code>date = epoch_start + timestamp seconds</code></p>
+  <p><strong>Worked example.</strong> The timestamp <code>1788171007</code>:</p>
+  <p><code>1970-01-01T00:00:00Z + 1788171007s = 2026-08-31 10:10:07 UTC</code></p>
 
-  <label for="epochInput">Epoch Time (Seconds since Jan 1, 1970)</label>
-  <input type="number" id="epochInput" placeholder="e.g. 1609459200" oninput="convertEpochToDate()" />
+  <h3>Seconds or milliseconds?</h3>
+  <p>This is the most common source of wrong dates. Classic Unix time is in
+     <strong>seconds</strong> (10 digits around now), while JavaScript's <code>Date.now()</code> and
+     many JSON APIs return <strong>milliseconds</strong> (13 digits). This tool looks at the magnitude
+     and tells you which one it assumed.</p>
 
-  <button onclick="convertEpochToDate()">Convert to Date</button>
-
-  <h3>Date Output</h3>
-  <div id="dateResult" class="result">Your date will appear here.</div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Timestamp</th><th>Treated as</th><th>Resulting date (UTC)</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0</td><td>seconds</td><td class="num">1970-01-01 00:00:00</td></tr>
+        <tr><td class="num">1000000000</td><td>seconds</td><td class="num">2001-09-09 01:46:40</td></tr>
+        <tr><td class="num">1234567890</td><td>seconds</td><td class="num">2009-02-13 23:31:30</td></tr>
+        <tr><td class="num">1788171007</td><td>seconds</td><td class="num">2026-08-31 10:10:07</td></tr>
+        <tr><td class="num">1788171007000</td><td>milliseconds</td><td class="num">2026-08-31 10:10:07</td></tr>
+      </tbody>
+    </table>
   </div>
- -->
 
-  <h4>Why Convert Epoch to Date?</h4>
-  <p>Epoch (Unix) time is widely used in programming, databases, APIs, and systems logging. Converting epoch time to human-readable dates is essential for debugging, analytics, and reporting.</p>
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>Are epoch timestamps in seconds or milliseconds?</dt>
+    <dd>Classic Unix time counts seconds since 1 January 1970 UTC. JavaScript and many modern APIs use milliseconds instead. This tool detects which one you meant from the size of the number, and tells you which it assumed.</dd>
 
-  <h4>FAQs</h4>
-  <ul>
-    <li><strong>Is this epoch to date converter free?</strong> Yes! 100% free and no signup required.</li>
-    <li><strong>What format is the output?</strong> It displays your local date and time in ISO format.</li>
-    <li><strong>Does this tool work offline?</strong> Yes! All conversion happens in your browser — no data is sent to a server.</li>
+    <dt>Which time zone is the result shown in?</dt>
+    <dd>Both. The converter shows UTC and your device's local time side by side, each clearly labelled, so there is no ambiguity about which one you are reading.</dd>
+
+    <dt>What is the current Unix timestamp?</dt>
+    <dd>Press the "Use current time" button to drop the current epoch value into the box. It updates from your device clock.</dd>
+
+    <dt>Does the year 2038 problem affect this tool?</dt>
+    <dd>The 2038 problem affects systems that store Unix time in a 32-bit signed integer, which overflows on 19 January 2038. JavaScript uses 64-bit floating point, so this page handles dates well beyond that.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The conversion runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3><p>US Eastern time with automatic daylight saving.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-edt.html">UTC → EDT</a></h3><p>Convert UTC to Eastern Daylight Time.</p></li>
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgba-to-hex.html">RGBA → HEX</a></h3><p>Convert colors that include an alpha channel.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
   </ul>
 
-  <!-- 底部广告位
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
- -->
-</div>
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free Epoch to Date Converter | Instant, Secure, No Signup
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertEpochToDate() {
-    const inputVal = document.getElementById('epochInput').value;
-    if (!inputVal) {
-      document.getElementById('dateResult').textContent = 'Please enter an epoch timestamp.';
-      return;
-    }
+/* ---------------------------------------------------------------------------
+   Fix: the original printed only the visitor's local time with no label, which
+   is genuinely confusing for a global audience. We now show UTC, local and
+   ISO 8601 side by side, each labelled, and we state whether the input was
+   read as seconds or milliseconds.
+--------------------------------------------------------------------------- */
+var fmtUTC = new Intl.DateTimeFormat('en-GB', {
+  timeZone: 'UTC',
+  weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+  hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+});
+var fmtLocalFull = new Intl.DateTimeFormat('en-GB', {
+  weekday: 'short', year: 'numeric', month: 'short', day: 'numeric',
+  hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+});
+var fmtLocalZone = new Intl.DateTimeFormat('en-GB', { timeZoneName: 'short' });
 
-    const epoch = parseInt(inputVal, 10);
-    if (isNaN(epoch)) {
-      document.getElementById('dateResult').textContent = 'Invalid epoch time. Please enter a valid number.';
-      return;
-    }
-
-    const date = new Date(epoch * 1000);
-    const dateStr = date.toLocaleString('en-US', { 
-      year: 'numeric', month: 'long', day: 'numeric',
-      hour: '2-digit', minute: '2-digit', second: '2-digit',
-      timeZoneName: 'short'
-    });
-    document.getElementById('dateResult').textContent = dateStr;
+function localZoneName(date) {
+  var parts = fmtLocalZone.formatToParts(date);
+  for (var i = 0; i < parts.length; i++) {
+    if (parts[i].type === 'timeZoneName') return parts[i].value;
   }
+  return 'Local';
+}
+
+// 13 digits -> milliseconds; 10 digits (or fewer) -> seconds.
+function detectUnit(raw) {
+  var digits = String(raw).trim().replace(/^-/, '').replace(/\D/g, '');
+  return digits.length > 11 ? 'ms' : 's';
+}
+
+function convert() {
+  var raw = document.getElementById('epochInput').value.trim();
+  var utcOut = document.getElementById('utcResult');
+  var localOut = document.getElementById('localResult');
+  var isoOut = document.getElementById('isoResult');
+  var unitNote = document.getElementById('unit');
+
+  if (!raw) {
+    utcOut.textContent = 'Enter a timestamp to see the date.';
+    utcOut.classList.remove('error');
+    localOut.textContent = '—';
+    isoOut.textContent = '—';
+    unitNote.textContent = '';
+    return;
+  }
+
+  var num = Number(raw);
+  if (!isFinite(num)) {
+    utcOut.textContent = 'Please enter a number.';
+    utcOut.classList.add('error');
+    localOut.textContent = '—';
+    isoOut.textContent = '—';
+    unitNote.textContent = '';
+    return;
+  }
+
+  var unit = detectUnit(raw);
+  var ms = unit === 'ms' ? num : num * 1000;
+  var date = new Date(ms);
+
+  if (isNaN(date.getTime())) {
+    utcOut.textContent = 'That value is out of the supported date range.';
+    utcOut.classList.add('error');
+    localOut.textContent = '—';
+    isoOut.textContent = '—';
+    unitNote.textContent = '';
+    return;
+  }
+
+  utcOut.textContent = fmtUTC.format(date) + ' UTC';
+  utcOut.classList.remove('error');
+  localOut.textContent = fmtLocalFull.format(date) + '  (' + localZoneName(date) + ')';
+  isoOut.textContent = date.toISOString();
+  unitNote.textContent = 'Read as ' + (unit === 'ms' ? 'milliseconds' : 'seconds') + '.';
+}
+
+function useNow() {
+  document.getElementById('epochInput').value = Math.floor(Date.now() / 1000);
+  convert();
+}
+
+var state = dhUrlState('t', function (v) {
+  document.getElementById('epochInput').value = v;
+  convert();
+});
+document.getElementById('epochInput').addEventListener('input', function () {
+  state.save(this.value);
+  convert();
+});
 </script>
 
 </body>

@@ -1,109 +1,312 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online RGBA to HEX converter. Instantly convert RGBA color codes to HEX values with alpha transparency — fast, free, no signup.">
-  <title>Convert RGBA to HEX Color Online — Free Instant Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="number"], input[type="text"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-    .color-preview { width: 100%; height: 50px; border-radius: 6px; margin-top: 1em; border: 1px solid #ccc; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RGBA to HEX Converter — Color with Alpha</title>
+<meta name="description" content="Convert RGBA colors to HEX, including the alpha channel as an 8-digit hex code. Live preview, input validation and one-click copy. Free, no signup.">
+<link rel="canonical" href="https://www.dhh5.com/convert-rgba-to-hex.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-rgba-to-hex.html">
+<meta property="og:title" content="RGBA to HEX Converter — Color with Alpha">
+<meta property="og:description" content="Convert RGBA to 8-digit HEX with the alpha channel included.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RGBA to HEX Converter">
+<meta name="twitter:description" content="Convert RGBA to 8-digit HEX with alpha included.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "RGBA to HEX Converter",
+      "url": "https://www.dhh5.com/convert-rgba-to-hex.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Color tools", "item": "https://www.dhh5.com/#color" },
+        { "@type": "ListItem", "position": 3, "name": "RGBA to HEX" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is alpha represented in HEX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In an 8-digit hex code the final pair is the alpha channel: 00 is fully transparent and FF is fully opaque. So rgba(11, 107, 203, 0.5) becomes #0B6BCB80." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between 6-digit and 8-digit HEX?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A 6-digit code such as #0B6BCB carries only red, green and blue. An 8-digit code such as #0B6BCB80 adds a trailing alpha pair. All modern browsers support the 8-digit form." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I omit the alpha value?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. If you leave alpha blank the tool treats it as 1 (fully opaque), and both the 6-digit and 8-digit codes are shown so you can pick the one you need." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert RGBA to HEX Online</h1>
-  <p>Free, Instant, No Signup — The Best RGBA to HEX Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#color">Color tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#color">Color tools</a></li>
+      <li>RGBA to HEX</li>
+    </ol>
+  </nav>
+
+  <h1>RGBA to HEX Converter</h1>
+  <p>Convert an <strong>RGBA</strong> color — red, green, blue plus alpha — into an
+     <strong>8-digit HEX code</strong>. Values are validated, so out-of-range input is clamped rather
+     than silently producing a broken color.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="rgbaInput">RGBA value</label>
+      <input type="text" id="rgbaInput" placeholder="e.g. 11, 107, 203, 0.5" autocomplete="off">
+      <p class="hint">Three numbers from 0 to 255, then an optional alpha between 0 and 1. Percentages
+         such as <code>50%</code> are also accepted for alpha.</p>
     </div>
-  </div>
--->
 
-  <h2>Free Online RGBA to HEX Color Converter</h2>
-  <p>Enter your RGBA values to get the HEX color code (with alpha). Works instantly, no signup needed.</p>
-
-  <label for="rVal">R (0-255)</label>
-  <input type="number" id="rVal" min="0" max="255" placeholder="e.g. 255" oninput="convertRGBAtoHex()"/>
-
-  <label for="gVal">G (0-255)</label>
-  <input type="number" id="gVal" min="0" max="255" placeholder="e.g. 99" oninput="convertRGBAtoHex()"/>
-
-  <label for="bVal">B (0-255)</label>
-  <input type="number" id="bVal" min="0" max="255" placeholder="e.g. 71" oninput="convertRGBAtoHex()"/>
-
-  <label for="aVal">A (0 to 1)</label>
-  <input type="text" id="aVal" placeholder="e.g. 0.5" oninput="convertRGBAtoHex()"/>
-
-  <button onclick="convertRGBAtoHex()">Convert to HEX</button>
-
-  <h3>HEX Output</h3>
-  <div id="hexResult" class="result">Your HEX code will appear here.</div>
-  <div id="colorPreview" class="color-preview"></div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+    <div class="result-block">
+      <div class="result-label">HEX with alpha (8-digit)</div>
+      <div class="result" id="hex8Result" aria-live="polite">Enter an RGBA value.</div>
     </div>
+
+    <div class="result-block">
+      <div class="result-label">HEX without alpha (6-digit)</div>
+      <div class="result" id="hex6Result" aria-live="polite">—</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#hex8Result">Copy 8-digit</button>
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#hex6Result">Copy 6-digit</button>
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#cssResult">Copy CSS</button>
+      <span class="hint" id="note" aria-live="polite"></span>
+    </div>
+
+    <p class="hint mono" id="cssResult" aria-label="CSS declaration"></p>
+
+    <div class="swatch"><div class="swatch-inner" id="swatch"></div></div>
   </div>
--->
 
-  <h4>Why Convert RGBA to HEX?</h4>
-  <p>RGBA to HEX conversion allows designers and developers to convert transparent colors into HEX format, useful for CSS, HTML, and frontend tools. For example, RGBA(255, 99, 71, 0.5) becomes <strong>#FF634780</strong>.</p>
-
-  <h4>FAQs</h4>
+  <h2>How alpha is encoded</h2>
+  <p>An 8-digit HEX code is a 6-digit color with one extra pair at the end for alpha:</p>
+  <p><code>#RRGGBBAA</code></p>
+  <p>The alpha channel runs from <code>00</code> (fully transparent) to <code>FF</code> (fully
+     opaque), and is the alpha fraction multiplied by 255 and rounded:</p>
+  <p><code>alphaHex = round(alpha × 255).toString(16)</code></p>
+  <p><strong>Worked example.</strong> Convert <code>rgba(11, 107, 203, 0.5)</code>:</p>
   <ul>
-    <li><strong>Is this RGBA to HEX converter free?</strong> Yes! It’s 100% free and works directly in your browser.</li>
-    <li><strong>Does it support transparency?</strong> Yes, it includes the alpha channel in the HEX output (e.g. <code>#FF634780</code>).</li>
-    <li><strong>Can I preview the color?</strong> Yes! The color preview updates automatically.</li>
+    <li>Red 11 → <code>0B</code></li>
+    <li>Green 107 → <code>6B</code></li>
+    <li>Blue 203 → <code>CB</code></li>
+    <li>Alpha 0.5 → <code>round(0.5 × 255) = 128</code> → <code>80</code></li>
+  </ul>
+  <p>Result: <code>#0B6BCB80</code></p>
+
+  <h2>Common alpha values</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Transparency</th><th class="num">Alpha</th><th class="num">Hex pair</th></tr></thead>
+      <tbody>
+        <tr><td>Fully transparent</td><td class="num">0</td><td class="num">00</td></tr>
+        <tr><td>10% opaque</td><td class="num">0.1</td><td class="num">1A</td></tr>
+        <tr><td>25% opaque</td><td class="num">0.25</td><td class="num">40</td></tr>
+        <tr><td>50% opaque</td><td class="num">0.5</td><td class="num">80</td></tr>
+        <tr><td>75% opaque</td><td class="num">0.75</td><td class="num">BF</td></tr>
+        <tr><td>90% opaque</td><td class="num">0.9</td><td class="num">E6</td></tr>
+        <tr><td>Fully opaque</td><td class="num">1</td><td class="num">FF</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How is alpha represented in HEX?</dt>
+    <dd>In an 8-digit hex code the final pair is the alpha channel: 00 is fully transparent and FF is fully opaque. So rgba(11, 107, 203, 0.5) becomes #0B6BCB80.</dd>
+
+    <dt>What is the difference between 6-digit and 8-digit HEX?</dt>
+    <dd>A 6-digit code such as #0B6BCB carries only red, green and blue. An 8-digit code such as #0B6BCB80 adds a trailing alpha pair. All modern browsers support the 8-digit form.</dd>
+
+    <dt>Can I omit the alpha value?</dt>
+    <dd>Yes. If you leave alpha blank the tool treats it as 1 (fully opaque), and both the 6-digit and 8-digit codes are shown so you can pick the one you need.</dd>
+
+    <dt>Do all browsers support 8-digit HEX?</dt>
+    <dd>Every current browser does, including Chrome, Firefox, Safari and Edge. Support in CSS dates back several years; very old browsers would need the rgba() form instead.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The conversion runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion without alpha.</p></li>
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+    <li class="tool-card"><h3><a href="/convert-decimal-to-octal.html">Decimal → Octal</a></h3><p>Base-10 to base-8 number conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
     </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
   </div>
--->
-
-</div>
-
-<footer>
-  &copy; 2025 www.dhh5.com — Free RGBA to HEX Color Converter | Instant, Secure, No Signup
 </footer>
 
 <script>
-  function convertRGBAtoHex() {
-    const r = parseInt(document.getElementById('rVal').value) || 0;
-    const g = parseInt(document.getElementById('gVal').value) || 0;
-    const b = parseInt(document.getElementById('bVal').value) || 0;
-    const a = parseFloat(document.getElementById('aVal').value);
-    const alpha = isNaN(a) ? 1 : Math.max(0, Math.min(1, a));
+/* ---------------------------------------------------------------------------
+   Fix: the original clamped alpha but left r/g/b unchecked, so an out-of-range
+   channel still produced a malformed code. Now every channel is clamped to
+   0-255, alpha accepts a fraction or a percentage, and clamping is reported.
+--------------------------------------------------------------------------- */
+function parseRGBA(str) {
+  var raw = String(str).trim();
+  if (raw === '') return { empty: true };
 
-    const toHex = (n) => {
-      const hex = Math.round(n).toString(16).toUpperCase();
-      return hex.length === 1 ? '0' + hex : hex;
-    };
+  var parts = raw.split(/[\s,]+/).filter(Boolean);
+  if (parts.length < 3) return { error: 'Please enter red, green and blue values (0–255).' };
 
-    const hexCode = `#${toHex(r)}${toHex(g)}${toHex(b)}${toHex(alpha * 255)}`;
-    document.getElementById('hexResult').textContent = hexCode;
-    document.getElementById('colorPreview').style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  var channels = [];
+  var wasClamped = false;
+  for (var i = 0; i < 3; i++) {
+    var n = parseFloat(parts[i]);
+    if (isNaN(n)) return { error: 'Channel ' + (i + 1) + ' is not a number.' };
+    var c = Math.min(255, Math.max(0, Math.round(n)));
+    if (c !== Math.round(n)) wasClamped = true;
+    channels.push(c);
   }
+
+  var alpha = 1;
+  if (parts.length >= 4) {
+    var aRaw = parts[3];
+    var pct = /^(-?[\d.]+)%$/.exec(aRaw);
+    if (pct) {
+      alpha = parseFloat(pct[1]) / 100;
+    } else {
+      alpha = parseFloat(aRaw);
+      if (isNaN(alpha)) return { error: 'Alpha must be a number between 0 and 1, or a percentage.' };
+    }
+    if (alpha < 0 || alpha > 1) {
+      alpha = Math.min(1, Math.max(0, alpha));
+      wasClamped = true;
+    }
+  }
+
+  return { r: channels[0], g: channels[1], b: channels[2], alpha: alpha, wasClamped: wasClamped };
+}
+
+function pair(n) {
+  return n.toString(16).toUpperCase().padStart(2, '0');
+}
+
+function convert() {
+  var raw = document.getElementById('rgbaInput').value;
+  var hex8 = document.getElementById('hex8Result');
+  var hex6 = document.getElementById('hex6Result');
+  var css = document.getElementById('cssResult');
+  var note = document.getElementById('note');
+  var swatch = document.getElementById('swatch');
+
+  var c = parseRGBA(raw);
+
+  if (c.empty) {
+    hex8.textContent = 'Enter an RGBA value.';
+    hex8.classList.remove('error');
+    hex6.textContent = '—';
+    css.textContent = '';
+    note.textContent = '';
+    swatch.style.background = 'transparent';
+    return;
+  }
+  if (c.error) {
+    hex8.textContent = c.error;
+    hex8.classList.add('error');
+    hex6.textContent = '—';
+    css.textContent = '';
+    note.textContent = '';
+    swatch.style.background = 'transparent';
+    return;
+  }
+
+  var alphaByte = Math.round(c.alpha * 255);
+  var six = '#' + pair(c.r) + pair(c.g) + pair(c.b);
+  var eight = six + pair(alphaByte);
+
+  hex8.textContent = eight;
+  hex8.classList.remove('error');
+  hex6.textContent = six;
+  css.textContent = 'background-color: ' + eight +
+                    ';  /* rgba(' + c.r + ', ' + c.g + ', ' + c.b + ', ' + c.alpha + ') */';
+  note.textContent = c.wasClamped ? 'Some values were outside the valid range and were clamped.' : '';
+  swatch.style.background = 'rgba(' + c.r + ', ' + c.g + ', ' + c.b + ', ' + c.alpha + ')';
+}
+
+var state = dhUrlState('rgba', function (v) {
+  document.getElementById('rgbaInput').value = decodeURIComponent(v);
+  convert();
+});
+document.getElementById('rgbaInput').addEventListener('input', function () {
+  state.save(encodeURIComponent(this.value));
+  convert();
+});
 </script>
 
 </body>

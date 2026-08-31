@@ -1,105 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online JSON to XML converter. Instantly convert JSON data to XML format — no signup, fast and secure.">
-  <title>Convert JSON to XML Online — Free Instant Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    textarea { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; white-space: pre-wrap; word-break: break-word; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JSON to XML Converter — Free Two-Way Online Tool</title>
+<meta name="description" content="Convert JSON to XML and XML back to JSON. Proper entity escaping, array handling and formatting. Free, no signup, runs entirely in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-json-to-xml.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-json-to-xml.html">
+<meta property="og:title" content="JSON to XML Converter — Free Two-Way Online Tool">
+<meta property="og:description" content="Convert JSON to XML and back, with correct escaping, array handling and formatting.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSON to XML Converter">
+<meta name="twitter:description" content="Two-way JSON/XML conversion with correct escaping and array handling.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "JSON to XML Converter",
+      "url": "https://www.dhh5.com/convert-json-to-xml.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Developer tools", "item": "https://www.dhh5.com/#developer" },
+        { "@type": "ListItem", "position": 3, "name": "JSON to XML" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are special characters escaped in the XML output?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ampersand, less-than, greater-than, quotes and apostrophes are converted to XML entities, so values such as \"a & b < c\" produce well-formed XML." }
+        },
+        {
+          "@type": "Question",
+          "name": "How are JSON arrays represented in XML?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Each array item is emitted as a repeated element using the property name. An array of objects nests inside each repeated element, while an array of plain values becomes one element per value." }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to invalid XML element names?",
+          "acceptedAnswer": { "@type": "Answer", "text": "XML element names must start with a letter or underscore and cannot contain spaces. Names that break these rules, such as keys starting with a digit, are sanitised automatically." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert JSON to XML Online</h1>
-  <p>Free, Instant, No Signup — The Best JSON to XML Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#developer">Developer tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#developer">Developer tools</a></li>
+      <li>JSON to XML</li>
+    </ol>
+  </nav>
+
+  <h1>JSON to XML Converter</h1>
+  <p>Convert <strong>JSON to XML</strong> and <strong>XML back to JSON</strong>. Values are properly
+     escaped, arrays are handled correctly, and invalid element names are sanitised — so the output
+     is always well-formed XML.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="jsonInput">JSON input</label>
+      <textarea id="jsonInput" rows="9" placeholder='{"name":"Ada","skills":["math","logic"],"note":"a & b < c"}'></textarea>
+    </div>
+
+    <div class="field">
+      <label for="rootName">Root element name</label>
+      <input type="text" id="rootName" value="root" autocomplete="off">
+      <p class="hint">XML requires a single root element; JSON has no equivalent.</p>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="toXml()">Convert to XML</button>
+      <button type="button" class="btn btn-secondary" onclick="loadSample()">Load sample</button>
+      <button type="button" class="btn btn-secondary" onclick="clearAll()">Clear</button>
+    </div>
+
+    <div class="result-block" style="margin-top:18px">
+      <div class="result-label">XML output</div>
+      <textarea id="xmlOutput" rows="12" readonly aria-live="polite" placeholder="XML appears here."></textarea>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#xmlOutput">Copy XML</button>
+      <span class="hint" id="toXmlStatus" aria-live="polite"></span>
     </div>
   </div>
--->
-  <h2>Free Online JSON to XML Converter</h2>
-  <p>Paste your JSON data below to convert it to XML format. This tool is fast, free, and requires no registration.</p>
 
-  <textarea id="jsonInput" rows="8" placeholder='Enter JSON here...'></textarea>
-  <button onclick="convertJSONtoXML()">Convert to XML</button>
+  <div class="card">
+    <div class="field">
+      <label for="xmlInput">XML input</label>
+      <textarea id="xmlInput" rows="9" placeholder="<root><name>Ada</name></root>"></textarea>
+    </div>
 
-  <h3>XML Output</h3>
-  <div id="xmlResult" class="result">Your XML will appear here.</div>
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="toJson()">Convert to JSON</button>
+    </div>
 
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+    <div class="result-block" style="margin-top:18px">
+      <div class="result-label">JSON output</div>
+      <textarea id="jsonOutput" rows="12" readonly aria-live="polite" placeholder="JSON appears here."></textarea>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#jsonOutput">Copy JSON</button>
+      <span class="hint" id="toJsonStatus" aria-live="polite"></span>
     </div>
   </div>
--->
-  <h4>Why Convert JSON to XML?</h4>
-  <p>Converting JSON to XML is useful when working across different data formats, especially in web services, APIs, and data exchange between systems. This converter helps developers and data engineers switch between formats easily.</p>
 
-  <h4>FAQs</h4>
+  <h2>How the two formats map to each other</h2>
+  <p>JSON and XML do not line up perfectly, so a few rules decide the conversion:</p>
   <ul>
-    <li><strong>Is this JSON to XML converter free?</strong> Yes! It’s 100% free and works entirely in your browser.</li>
-    <li><strong>Is my data secure?</strong> Yes. The conversion happens locally in your browser. No data is sent to a server.</li>
-    <li><strong>Can I convert large JSON files?</strong> Small to medium JSON works instantly. For very large files, browser performance may limit speed.</li>
+    <li><strong>Root element.</strong> XML needs exactly one root; JSON does not have one, so you supply the name.</li>
+    <li><strong>Objects</strong> become nested elements.</li>
+    <li><strong>Arrays</strong> become repeated elements using the property name.</li>
+    <li><strong>Strings</strong> are escaped — <code>&amp;</code>, <code>&lt;</code>, <code>&gt;</code>,
+        <code>&quot;</code> and <code>&apos;</code> — so the result is well-formed XML.</li>
+    <li><strong>Null</strong> becomes an empty element marked <code>nil="true"</code>.</li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-</div>
+  <p><strong>Worked example.</strong> This JSON:</p>
+  <pre><code>{ "note": "a &amp; b &lt; c", "tags": ["x", "y"] }</code></pre>
+  <p>becomes this XML:</p>
+  <pre><code>&lt;root&gt;
+  &lt;note&gt;a &amp;amp; b &amp;lt; c&lt;/note&gt;
+  &lt;tags&gt;x&lt;/tags&gt;
+  &lt;tags&gt;y&lt;/tags&gt;
+&lt;/root&gt;</code></pre>
 
-<footer>
-  &copy; 2025 www.dhh5.com— Free JSON to XML Converter | Instant, Secure, No Signup
+  <h2>Common pitfalls this tool avoids</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Pitfall</th><th>Broken output</th><th>Correct output</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Unescaped <code>&amp;</code></td>
+          <td><code>&lt;note&gt;a &amp; b&lt;/note&gt;</code></td>
+          <td><code>&lt;note&gt;a &amp;amp; b&lt;/note&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Array of plain values</td>
+          <td><code>&lt;tags&gt;&lt;0&gt;x&lt;/0&gt;&lt;/tags&gt;</code></td>
+          <td><code>&lt;tags&gt;x&lt;/tags&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Key starts with a digit</td>
+          <td><code>&lt;2fa&gt;true&lt;/2fa&gt;</code></td>
+          <td><code>&lt;_2fa&gt;true&lt;/_2fa&gt;</code></td>
+        </tr>
+        <tr>
+          <td>Null value</td>
+          <td><code>&lt;note&gt;&lt;/note&gt;</code></td>
+          <td><code>&lt;note nil="true"/&gt;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>Are special characters escaped in the XML output?</dt>
+    <dd>Yes. Ampersand, less-than, greater-than, quotes and apostrophes are converted to XML entities, so values such as "a &amp; b &lt; c" produce well-formed XML.</dd>
+
+    <dt>How are JSON arrays represented in XML?</dt>
+    <dd>Each array item is emitted as a repeated element using the property name. An array of objects nests inside each repeated element, while an array of plain values becomes one element per value.</dd>
+
+    <dt>What happens to invalid XML element names?</dt>
+    <dd>XML element names must start with a letter or underscore and cannot contain spaces. Names that break these rules, such as keys starting with a digit, are sanitised automatically.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. Both conversions run entirely in your browser. Nothing you paste is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+    <li class="tool-card"><h3><a href="/convert-decimal-to-octal.html">Decimal → Octal</a></h3><p>Base-10 to base-8 number conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion with live preview.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3><p>US Eastern time with automatic daylight saving.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
+  </ul>
+
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertJSONtoXML() {
-    const jsonInput = document.getElementById('jsonInput').value;
-    try {
-      const jsonObj = JSON.parse(jsonInput);
-      const xml = jsonToXml(jsonObj);
-      document.getElementById('xmlResult').textContent = xml;
-    } catch (e) {
-      document.getElementById('xmlResult').textContent = 'Invalid JSON. Please check your input.';
-    }
+/* ---------------------------------------------------------------------------
+   Fixes applied vs. the original:
+   A) Values are XML-escaped (& < > " '), so output is well-formed.
+   B) Arrays of plain values emit <name>value</name> instead of the illegal
+      <name><0>value</0></name> produced before.
+   C) Element names that are not valid XML names are sanitised.
+   D) null is represented explicitly with nil="true".
+   E) XML -> JSON direction added via DOMParser.
+--------------------------------------------------------------------------- */
+
+function escapeXml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+// XML names must start with a letter or underscore; no spaces, no stray chars.
+function sanitizeName(name) {
+  var safe = String(name).replace(/[^A-Za-z0-9_.\-]/g, '_');
+  if (!/^[A-Za-z_]/.test(safe)) safe = '_' + safe;
+  if (safe === '') safe = 'item';
+  return safe;
+}
+
+function jsonToXml(value, name, indent) {
+  var pad = indent || '';
+
+  // Arrays repeat the element once per item
+  if (Array.isArray(value)) {
+    if (value.length === 0) return pad + '<' + name + '/>\n';
+    return value.map(function (item) {
+      return jsonToXml(item, name, pad);
+    }).join('');
   }
 
-  function jsonToXml(obj, indent = '') {
-    let xml = '';
-    for (let prop in obj) {
-      if (obj.hasOwnProperty(prop)) {
-        if (Array.isArray(obj[prop])) {
-          obj[prop].forEach(item => {
-            xml += `${indent}<${prop}>` + '\n' + jsonToXml(item, indent + '  ') + `${indent}</${prop}>\n`;
-          });
-        } else if (typeof obj[prop] === 'object') {
-          xml += `${indent}<${prop}>` + '\n' + jsonToXml(obj[prop], indent + '  ') + `${indent}</${prop}>\n`;
-        } else {
-          xml += `${indent}<${prop}>${obj[prop]}</${prop}>\n`;
-        }
-      }
-    }
+  // null
+  if (value === null) {
+    return pad + '<' + name + ' nil="true"/>\n';
+  }
+
+  // Objects nest
+  if (typeof value === 'object') {
+    var keys = Object.keys(value);
+    if (keys.length === 0) return pad + '<' + name + '/>\n';
+    var xml = pad + '<' + name + '>\n';
+    keys.forEach(function (k) {
+      xml += jsonToXml(value[k], sanitizeName(k), pad + '  ');
+    });
+    xml += pad + '</' + name + '>\n';
     return xml;
   }
+
+  // Primitives
+  return pad + '<' + name + '>' + escapeXml(value) + '</' + name + '>\n';
+}
+
+function toXml() {
+  var raw = document.getElementById('jsonInput').value.trim();
+  var out = document.getElementById('xmlOutput');
+  var status = document.getElementById('toXmlStatus');
+
+  if (!raw) {
+    out.value = '';
+    status.textContent = 'Please paste some JSON first.';
+    return;
+  }
+
+  var data;
+  try {
+    data = JSON.parse(raw);
+  } catch (e) {
+    out.value = '';
+    status.textContent = 'Invalid JSON: ' + e.message;
+    return;
+  }
+
+  var root = sanitizeName(document.getElementById('rootName').value.trim() || 'root');
+  var xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + jsonToXml(data, root, '');
+  out.value = xml.trim();
+  status.textContent = 'Converted successfully.';
+}
+
+/* ---- XML -> JSON ---- */
+function xmlNodeToJson(node) {
+  // Element with only text content
+  var children = Array.prototype.filter.call(node.childNodes, function (n) {
+    return n.nodeType === 1; // element nodes
+  });
+
+  if (children.length === 0) {
+    var text = (node.textContent || '').trim();
+    if (node.getAttribute('nil') === 'true' && text === '') return null;
+    if (text === '') return '';
+    // Preserve booleans / numbers where they are unambiguous
+    if (/^(true|false)$/i.test(text)) return text.toLowerCase() === 'true';
+    if (/^-?\d+(\.\d+)?$/.test(text) && !/^0\d/.test(text)) return Number(text);
+    return text;
+  }
+
+  var result = {};
+  children.forEach(function (child) {
+    var name = child.nodeName;
+    var value = xmlNodeToJson(child);
+    if (Object.prototype.hasOwnProperty.call(result, name)) {
+      // Second occurrence -> turn into an array
+      if (!Array.isArray(result[name])) result[name] = [result[name]];
+      result[name].push(value);
+    } else {
+      result[name] = value;
+    }
+  });
+  return result;
+}
+
+function toJson() {
+  var raw = document.getElementById('xmlInput').value.trim();
+  var out = document.getElementById('jsonOutput');
+  var status = document.getElementById('toJsonStatus');
+
+  if (!raw) {
+    out.value = '';
+    status.textContent = 'Please paste some XML first.';
+    return;
+  }
+
+  var doc;
+  try {
+    doc = new DOMParser().parseFromString(raw, 'application/xml');
+  } catch (e) {
+    out.value = '';
+    status.textContent = 'XML could not be parsed.';
+    return;
+  }
+
+  var err = doc.querySelector('parsererror');
+  if (err) {
+    out.value = '';
+    status.textContent = 'Invalid XML: ' + (err.textContent || 'parse error').slice(0, 120);
+    return;
+  }
+
+  var root = doc.documentElement;
+  var wrapped = {};
+  wrapped[root.nodeName] = xmlNodeToJson(root);
+  out.value = JSON.stringify(wrapped, null, 2);
+  status.textContent = 'Converted successfully.';
+}
+
+function loadSample() {
+  document.getElementById('jsonInput').value = JSON.stringify({
+    name: 'Ada Lovelace',
+    role: 'mathematician',
+    skills: ['math', 'logic'],
+    note: 'a & b < c',
+    active: true,
+    publications: null
+  }, null, 2);
+  toXml();
+}
+
+function clearAll() {
+  ['jsonInput', 'xmlOutput', 'xmlInput', 'jsonOutput'].forEach(function (id) {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('toXmlStatus').textContent = '';
+  document.getElementById('toJsonStatus').textContent = '';
+}
 </script>
 
 </body>

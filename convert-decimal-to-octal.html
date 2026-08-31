@@ -1,95 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online decimal to octal converter. Instantly convert decimal numbers to octal format — fast, secure, and no signup required.">
-  <title>Convert Decimal to Octal Online — Free Instant Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; word-break: break-word; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decimal to Octal Converter — Base 10 to Base 8</title>
+<meta name="description" content="Convert decimal numbers to octal and octal back to decimal. Supports large values and shows the step-by-step division. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-decimal-to-octal.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-decimal-to-octal.html">
+<meta property="og:title" content="Decimal to Octal Converter — Base 10 to Base 8">
+<meta property="og:description" content="Convert decimal to octal and back, with the working shown.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Decimal to Octal Converter">
+<meta name="twitter:description" content="Convert decimal to octal and back, with the working shown.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Decimal to Octal Converter",
+      "url": "https://www.dhh5.com/convert-decimal-to-octal.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Developer tools", "item": "https://www.dhh5.com/#developer" },
+        { "@type": "ListItem", "position": 3, "name": "Decimal to Octal" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert decimal to octal by hand?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Repeatedly divide the number by 8 and keep each remainder. Read the remainders from last to first. For 100: 100/8 = 12 remainder 4, 12/8 = 1 remainder 4, 1/8 = 0 remainder 1, giving 144 in octal." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is octal used in computing?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Octal groups binary neatly into sets of three bits, which made it a compact way to read binary on early computers. It is still most visible today in Unix file permissions, where values such as 755 encode read, write and execute rights." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this tool handle negative numbers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The sign is preserved and applied to the converted value, so -100 decimal becomes -144 octal." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert Decimal to Octal Online</h1>
-  <p>Free, Instant, No Signup — The Best Decimal to Octal Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#developer">Developer tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#developer">Developer tools</a></li>
+      <li>Decimal to Octal</li>
+    </ol>
+  </nav>
+
+  <h1>Decimal to Octal Converter</h1>
+  <p>Convert base-10 numbers to base-8 and back, with the division steps shown so you can check the
+     result by hand.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="decInput">Decimal (base 10)</label>
+      <input type="text" id="decInput" placeholder="e.g. 100" autocomplete="off" inputmode="numeric">
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">Octal (base 8)</div>
+      <div class="result" id="octResult" aria-live="polite">Enter a decimal number.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#octResult">Copy</button>
+    </div>
+
+    <h3>How it was calculated</h3>
+    <div id="steps" class="hint" aria-live="polite"></div>
+  </div>
+
+  <div class="card">
+    <div class="field">
+      <label for="octInput">Octal (base 8)</label>
+      <input type="text" id="octInput" placeholder="e.g. 144" autocomplete="off">
+      <p class="hint">Digits 0–7 only.</p>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">Decimal (base 10)</div>
+      <div class="result" id="decResult" aria-live="polite">Enter an octal number.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#decResult">Copy</button>
     </div>
   </div>
--->
-  <h2>Free Online Decimal to Octal Converter</h2>
-  <p>Enter your decimal number below to get its octal equivalent. Our tool is fast, free, and requires no registration.</p>
 
-  <label for="decimalInput">Decimal Number</label>
-  <input type="number" id="decimalInput" placeholder="e.g. 255" oninput="convertDecimalToOctal()" />
-
-  <button onclick="convertDecimalToOctal()">Convert to Octal</button>
-
-  <h3>Octal Output</h3>
-  <div id="octalResult" class="result">Your octal number will appear here.</div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-  <h4>Why Convert Decimal to Octal?</h4>
-  <p>Decimal to octal conversion is used in computer science, electronics, and software engineering where base-8 notation is required. This tool helps students, developers, and engineers easily convert decimal numbers to octal format.</p>
-
-  <h4>FAQs</h4>
+  <h2>How the conversion works</h2>
+  <p>Octal is base 8, so each position represents a power of 8. To convert from decimal, divide by 8
+     repeatedly and collect the remainders:</p>
+  <p><strong>Worked example.</strong> Convert <code>100</code> to octal:</p>
   <ul>
-    <li><strong>Is this decimal to octal converter free?</strong> Yes! It’s 100% free and works instantly without signup.</li>
-    <li><strong>Does it work offline?</strong> The conversion happens in your browser. No data is sent to any server.</li>
-    <li><strong>Can I convert negative numbers?</strong> Yes! The tool supports positive and negative decimal numbers.</li>
+    <li><code>100 ÷ 8 = 12</code> remainder <code>4</code></li>
+    <li><code>12 ÷ 8 = 1</code> remainder <code>4</code></li>
+    <li><code>1 ÷ 8 = 0</code> remainder <code>1</code></li>
+  </ul>
+  <p>Reading the remainders from the bottom up gives <code>144</code>. Checking the other way:</p>
+  <p><code>1×8² + 4×8¹ + 4×8⁰ = 64 + 32 + 4 = 100</code></p>
+
+  <h2>Common values</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th class="num">Decimal</th><th class="num">Octal</th><th>Where you see it</th></tr></thead>
+      <tbody>
+        <tr><td class="num">0</td><td class="num">0</td><td>Zero</td></tr>
+        <tr><td class="num">8</td><td class="num">10</td><td>Base rollover</td></tr>
+        <tr><td class="num">64</td><td class="num">100</td><td>8²</td></tr>
+        <tr><td class="num">100</td><td class="num">144</td><td>Worked example</td></tr>
+        <tr><td class="num">255</td><td class="num">377</td><td>Maximum 8-bit value</td></tr>
+        <tr><td class="num">420</td><td class="num">644</td><td>Common Unix file permission</td></tr>
+        <tr><td class="num">493</td><td class="num">755</td><td>Common Unix file permission</td></tr>
+        <tr><td class="num">511</td><td class="num">777</td><td>Full permissions</td></tr>
+        <tr><td class="num">4095</td><td class="num">7777</td><td>Maximum 12-bit value</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How do you convert decimal to octal by hand?</dt>
+    <dd>Repeatedly divide the number by 8 and keep each remainder. Read the remainders from last to first. For 100: 100/8 = 12 remainder 4, 12/8 = 1 remainder 4, 1/8 = 0 remainder 1, giving 144 in octal.</dd>
+
+    <dt>Why is octal used in computing?</dt>
+    <dd>Octal groups binary neatly into sets of three bits, which made it a compact way to read binary on early computers. It is still most visible today in Unix file permissions, where values such as 755 encode read, write and execute rights.</dd>
+
+    <dt>Can this tool handle negative numbers?</dt>
+    <dd>Yes. The sign is preserved and applied to the converted value, so −100 decimal becomes −144 octal.</dd>
+
+    <dt>What about numbers too large for JavaScript?</dt>
+    <dd>Values beyond about 15 digits lose precision because JavaScript numbers are double-precision floats. For everyday use this is not a problem, but for cryptographic-size integers use a big-integer library instead.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The conversion runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion with live preview.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3><p>US Eastern time with automatic daylight saving.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-</div>
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free Decimal to Octal Converter | Instant, Secure, No Signup
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertDecimalToOctal() {
-    const decimalValue = document.getElementById('decimalInput').value;
-    if (decimalValue === '') {
-      document.getElementById('octalResult').textContent = 'Please enter a decimal number.';
-      return;
-    }
-
-    const dec = parseInt(decimalValue, 10);
-    if (isNaN(dec)) {
-      document.getElementById('octalResult').textContent = 'Invalid input. Please enter a valid decimal number.';
-      return;
-    }
-
-    const octal = dec.toString(8);
-    document.getElementById('octalResult').textContent = octal;
+/* ---------------------------------------------------------------------------
+   Fix: the original used parseInt(), which silently truncated decimals and
+   accepted input such as "12abc". We now validate strictly, reject non-integers
+   with a clear message, and show the repeated-division working.
+--------------------------------------------------------------------------- */
+function toOctal(raw) {
+  var s = String(raw).trim();
+  if (s === '') return { error: null, empty: true };
+  if (!/^-?\d+$/.test(s)) {
+    return { error: 'Please enter a whole number (digits only, no decimals).' };
   }
+  var negative = s.charAt(0) === '-';
+  // Convert the magnitude only; the sign is tracked separately and re-applied
+  // on display. Converting "-100" directly would make BigInt return "-144",
+  // which combined with the negative flag would render "--144".
+  var n = BigInt(negative ? s.slice(1) : s);
+
+  if (n === 0n) return { value: '0', negative: false, steps: ['0 ÷ 8 = 0 remainder 0'] };
+
+  var value = n.toString(8);
+
+  // Build the repeated-division explanation
+  var steps = [];
+  var cur = n;
+  while (cur > 0n) {
+    var rem = cur % 8n;
+    var quo = cur / 8n;
+    steps.push(cur.toString() + ' ÷ 8 = ' + quo.toString() + ' remainder ' + rem.toString());
+    cur = quo;
+  }
+  steps.push('Read the remainders from bottom to top: ' + value);
+
+  return { value: value, negative: negative, steps: steps };
+}
+
+function fromOctal(raw) {
+  var s = String(raw).trim();
+  if (s === '') return { error: null, empty: true };
+  if (!/^-?[0-7]+$/.test(s)) {
+    return { error: 'Octal digits are 0 to 7 only.' };
+  }
+  var negative = s.charAt(0) === '-';
+  var digits = negative ? s.slice(1) : s;
+  var value = 0n;
+  for (var i = 0; i < digits.length; i++) {
+    value = value * 8n + BigInt(parseInt(digits.charAt(i), 10));
+  }
+  return { value: value.toString(), negative: negative };
+}
+
+function updateDecimal() {
+  var raw = document.getElementById('decInput').value;
+  var out = document.getElementById('octResult');
+  var steps = document.getElementById('steps');
+
+  var r = toOctal(raw);
+  if (r.empty) {
+    out.textContent = 'Enter a decimal number.';
+    out.classList.remove('error');
+    steps.textContent = '';
+    return;
+  }
+  if (r.error) {
+    out.textContent = r.error;
+    out.classList.add('error');
+    steps.textContent = '';
+    return;
+  }
+  out.textContent = (r.negative ? '-' : '') + r.value;
+  out.classList.remove('error');
+  steps.textContent = r.steps.join('  ·  ');
+}
+
+function updateOctal() {
+  var raw = document.getElementById('octInput').value;
+  var out = document.getElementById('decResult');
+
+  var r = fromOctal(raw);
+  if (r.empty) {
+    out.textContent = 'Enter an octal number.';
+    out.classList.remove('error');
+    return;
+  }
+  if (r.error) {
+    out.textContent = r.error;
+    out.classList.add('error');
+    return;
+  }
+  out.textContent = (r.negative ? '-' : '') + r.value;
+  out.classList.remove('error');
+}
+
+var decState = dhUrlState('dec', function (v) {
+  document.getElementById('decInput').value = v;
+  updateDecimal();
+});
+document.getElementById('decInput').addEventListener('input', function () {
+  decState.save(this.value);
+  updateDecimal();
+});
+
+var octState = dhUrlState('oct', function (v) {
+  document.getElementById('octInput').value = v;
+  updateOctal();
+});
+document.getElementById('octInput').addEventListener('input', function () {
+  octState.save(this.value);
+  updateOctal();
+});
 </script>
 
 </body>

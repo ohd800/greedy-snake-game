@@ -1,88 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free online knots to mph converter. Instantly convert knots to miles per hour (MPH) — fast, free, secure, and no signup required.">
-  <title>Convert Knots to MPH Online — Free Instant Knots to Miles Per Hour Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    input[type="number"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; font-weight: bold; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Knots to MPH Converter — Aviation &amp; Marine Speed</title>
+<meta name="description" content="Convert knots to miles per hour, km/h, m/s and feet per second. Built for aviation, marine and weather use. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-knots-to-mph.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-knots-to-mph.html">
+<meta property="og:title" content="Knots to MPH Converter — Aviation &amp; Marine Speed">
+<meta property="og:description" content="Convert knots to mph, km/h, m/s and ft/s in one go.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Knots to MPH Converter">
+<meta name="twitter:description" content="Convert knots to mph, km/h, m/s and ft/s in one go.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Knots to MPH Converter",
+      "url": "https://www.dhh5.com/convert-knots-to-mph.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Unit converters", "item": "https://www.dhh5.com/#units" },
+        { "@type": "ListItem", "position": 3, "name": "Knots to MPH" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How many mph is one knot?",
+          "acceptedAnswer": { "@type": "Answer", "text": "One knot equals 1.15078 miles per hour. A knot is one nautical mile per hour, and a nautical mile is 6,076.12 feet compared with a statute mile of 5,280 feet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do aircraft and ships use knots?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A nautical mile is based on one minute of latitude, which makes it directly usable with nautical charts and latitude scales. Aviation and maritime navigation kept the unit for that reason." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a knot the same as a nautical mile per hour?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. By definition one knot is one nautical mile per hour, which is 1.852 kilometres per hour exactly." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert Knots to MPH Online</h1>
-  <p>Free, Instant, No Signup — The Best Knots to Miles Per Hour Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#units">Unit converters</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#units">Unit converters</a></li>
+      <li>Knots to MPH</li>
+    </ol>
+  </nav>
+
+  <h1>Knots to MPH Converter</h1>
+  <p>Convert <strong>knots to miles per hour</strong> — and to km/h, m/s and ft/s at the same time.
+     Built for aviation, marine and weather work.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="knotsInput">Speed in knots</label>
+      <input type="number" id="knotsInput" step="0.01" placeholder="e.g. 250" inputmode="decimal">
+      <p class="hint">Negative values are accepted for working with relative wind or current.</p>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">Miles per hour (mph)</div>
+      <div class="result" id="mphResult" aria-live="polite">Enter a speed in knots.</div>
+    </div>
+
+    <h3>All units at this speed</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Unit</th><th class="num">Value</th></tr></thead>
+        <tbody id="allUnits">
+          <tr><td colspan="2" style="color:var(--text-muted)">Enter a speed above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn-row" style="margin-top:14px">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#mphResult">Copy mph</button>
     </div>
   </div>
- -->
-  <h2>Free Knots to MPH Converter</h2>
-  <p>Enter knots value below to convert it instantly to miles per hour (MPH). This tool is fast, free, and secure with no registration required.</p>
 
-  <label for="knotsInput">Knots</label>
-  <input type="number" id="knotsInput" placeholder="e.g. 20" oninput="convertKnotsToMPH()" />
+  <div class="card">
+    <div class="field">
+      <label for="mphInput">Speed in mph</label>
+      <input type="number" id="mphInput" step="0.01" placeholder="e.g. 288" inputmode="decimal">
+    </div>
 
-  <button onclick="convertKnotsToMPH()">Convert to MPH</button>
+    <div class="result-block">
+      <div class="result-label">Knots</div>
+      <div class="result" id="knotsResult" aria-live="polite">Enter a speed in mph.</div>
+    </div>
 
-  <h3>MPH Output</h3>
-  <div id="mphResult" class="result">Your MPH value will appear here.</div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#knotsResult">Copy knots</button>
     </div>
   </div>
--->
-  <h4>Why Convert Knots to MPH?</h4>
-  <p>Knots to MPH conversion is commonly used in aviation, marine, and weather applications. This tool helps pilots, sailors, and meteorologists convert speeds quickly and accurately.</p>
 
-  <h4>FAQs</h4>
-  <ul>
-    <li><strong>Is this knots to mph converter free?</strong> Yes! It’s 100% free and works instantly in your browser.</li>
-    <li><strong>What is the conversion factor?</strong> 1 knot = 1.15078 miles per hour (MPH).</li>
-    <li><strong>Does it work offline?</strong> Yes! The conversion happens locally in your browser. No data is sent to any server.</li>
+  <h2>How the conversion works</h2>
+  <p>One knot is one <strong>nautical mile per hour</strong>. A nautical mile is 6,076.12 feet,
+     while a statute mile is 5,280 feet, so:</p>
+  <p><code>mph = knots × (1852 ÷ 1609.344) = knots × 1.1507794</code></p>
+  <p><strong>Worked example.</strong> A cruising speed of 250 knots:</p>
+  <p><code>250 × 1.1507794 = 287.69 mph</code></p>
+  <p>Reverse direction:</p>
+  <p><code>knots = mph ÷ 1.1507794</code> &nbsp;or&nbsp; <code>knots = mph × 0.868976</code></p>
+  <p class="hint">The factor is often rounded to 1.15078, which gives 287.70 for this example.
+     This tool uses the exact ratio, so it reports 287.69 — a difference of one hundredth of a mile
+     per hour, but the exact figure is the one to quote.</p>
+
+  <h2>Conversion reference</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th class="num">Knots</th><th class="num">mph</th><th class="num">km/h</th><th class="num">m/s</th><th class="num">ft/s</th></tr>
+      </thead>
+      <tbody id="refTable"></tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How many mph is one knot?</dt>
+    <dd>One knot equals 1.15078 miles per hour. A knot is one nautical mile per hour, and a nautical mile is 6,076.12 feet compared with a statute mile of 5,280 feet.</dd>
+
+    <dt>Why do aircraft and ships use knots?</dt>
+    <dd>A nautical mile is based on one minute of latitude, which makes it directly usable with nautical charts and latitude scales. Aviation and maritime navigation kept the unit for that reason.</dd>
+
+    <dt>Is a knot the same as a nautical mile per hour?</dt>
+    <dd>Yes. By definition one knot is one nautical mile per hour, which is 1.852 kilometres per hour exactly.</dd>
+
+    <dt>Why not just say "knots per hour"?</dt>
+    <dd>The word knot already means "nautical miles per hour", so "knots per hour" would mean an acceleration. The correct usage is simply knots.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The conversion runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3><p>US Eastern time with automatic daylight saving.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-edt.html">UTC → EDT</a></h3><p>Convert UTC to Eastern Daylight Time.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion with live preview.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgba-to-hex.html">RGBA → HEX</a></h3><p>Convert colors that include an alpha channel.</p></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-</div>
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free Knots to MPH Converter | Instant, Secure, No Signup
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertKnotsToMPH() {
-    const knots = parseFloat(document.getElementById('knotsInput').value);
-    if (isNaN(knots)) {
-      document.getElementById('mphResult').textContent = 'Please enter a valid number of knots.';
-      return;
-    }
-    const mph = (knots * 1.15078).toFixed(4);
-    document.getElementById('mphResult').textContent = `${mph} MPH`;
+/* Exact definitions:
+   1 nautical mile = 1852 m = 6076.11549... ft
+   1 statute mile  = 1609.344 m = 5280 ft
+   so knots -> mph = 1852 / 1609.344 = 1.150779448...            */
+var KNOT_TO_MPH  = 1852 / 1609.344;   // 1.1507794480
+var KNOT_TO_KMH  = 1.852;             // exact
+var KNOT_TO_MS   = 1852 / 3600;       // 0.514444...
+var KNOT_TO_FTS  = 6076.11549 / 3600; // 1.687809...
+
+function fmt(n, dp) {
+  return n.toLocaleString('en-US', { minimumFractionDigits: dp, maximumFractionDigits: dp });
+}
+
+function convertKnots() {
+  var raw = document.getElementById('knotsInput').value;
+  var out = document.getElementById('mphResult');
+  var tbody = document.getElementById('allUnits');
+
+  if (raw.trim() === '') {
+    out.textContent = 'Enter a speed in knots.';
+    out.classList.remove('error');
+    tbody.innerHTML = '<tr><td colspan="2" style="color:var(--text-muted)">Enter a speed above.</td></tr>';
+    return;
   }
+  var kt = parseFloat(raw);
+  if (isNaN(kt)) {
+    out.textContent = 'Please enter a valid number.';
+    out.classList.add('error');
+    tbody.innerHTML = '<tr><td colspan="2" style="color:var(--text-muted)">Enter a speed above.</td></tr>';
+    return;
+  }
+
+  out.textContent = fmt(kt * KNOT_TO_MPH, 2) + ' mph';
+  out.classList.remove('error');
+
+  var rows = [
+    ['Miles per hour (mph)', fmt(kt * KNOT_TO_MPH, 2)],
+    ['Kilometres per hour (km/h)', fmt(kt * KNOT_TO_KMH, 2)],
+    ['Metres per second (m/s)', fmt(kt * KNOT_TO_MS, 2)],
+    ['Feet per second (ft/s)', fmt(kt * KNOT_TO_FTS, 2)],
+    ['Nautical miles per hour (kn)', fmt(kt, 2)]
+  ];
+  tbody.innerHTML = rows.map(function (r) {
+    return '<tr><td>' + r[0] + '</td><td class="num">' + r[1] + '</td></tr>';
+  }).join('');
+}
+
+function convertMph() {
+  var raw = document.getElementById('mphInput').value;
+  var out = document.getElementById('knotsResult');
+
+  if (raw.trim() === '') {
+    out.textContent = 'Enter a speed in mph.';
+    out.classList.remove('error');
+    return;
+  }
+  var mph = parseFloat(raw);
+  if (isNaN(mph)) {
+    out.textContent = 'Please enter a valid number.';
+    out.classList.add('error');
+    return;
+  }
+  out.textContent = fmt(mph / KNOT_TO_MPH, 2) + ' kn';
+  out.classList.remove('error');
+}
+
+(function buildReference() {
+  var speeds = [5, 10, 20, 25, 30, 40, 50, 60, 80, 100, 120, 150, 200, 250, 300, 400, 500];
+  document.getElementById('refTable').innerHTML = speeds.map(function (kt) {
+    return '<tr><td class="num">' + kt + '</td>' +
+           '<td class="num"><strong>' + fmt(kt * KNOT_TO_MPH, 2) + '</strong></td>' +
+           '<td class="num">' + fmt(kt * KNOT_TO_KMH, 2) + '</td>' +
+           '<td class="num">' + fmt(kt * KNOT_TO_MS, 2) + '</td>' +
+           '<td class="num">' + fmt(kt * KNOT_TO_FTS, 2) + '</td></tr>';
+  }).join('');
+})();
+
+var ktState = dhUrlState('kn', function (v) {
+  document.getElementById('knotsInput').value = v;
+  convertKnots();
+});
+document.getElementById('knotsInput').addEventListener('input', function () {
+  ktState.save(this.value);
+  convertKnots();
+});
+
+var mphState = dhUrlState('mph', function (v) {
+  document.getElementById('mphInput').value = v;
+  convertMph();
+});
+document.getElementById('mphInput').addEventListener('input', function () {
+  mphState.save(this.value);
+  convertMph();
+});
 </script>
 
 </body>

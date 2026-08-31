@@ -1,98 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free online converters for text, binary, RGB, HEX, JSON, XML, UTC time, units and more. Convert anything online instantly — no signup required.">
-  <title>Convert Anything Online | Free Tools for Text, Colors, Time, Units</title>
-  <link rel="stylesheet" href="styles.css"> <!-- 可接入 Tailwind 或自写 CSS -->
-  <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 960px; margin: auto; padding: 1em; }
-    .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; }
-    .tool-card { background: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 0 4px rgba(0,0,0,0.1); }
-    .tool-card h2 { font-size: 1.1em; margin: 0.5em 0; }
-    footer { text-align: center; font-size: 0.9em; color: #666; padding: 1em; }
-    .ad-slot { margin: 1em 0; text-align: center; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Online Converters &amp; Calculators — dhh5.com</title>
+<meta name="description" content="Free online converters for developers, designers, musicians and pilots: text to binary, RGB to HEX, UTC to EST/EDT, JSON to XML, epoch to date, knots to MPH, BPM to milliseconds. No signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/">
+<meta property="og:title" content="Free Online Converters &amp; Calculators — dhh5.com">
+<meta property="og:description" content="Free online converters for developers, designers, musicians and pilots. No signup, runs in your browser.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Online Converters &amp; Calculators — dhh5.com">
+<meta name="twitter:description" content="Free online converters for developers, designers, musicians and pilots. No signup, runs in your browser.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.dhh5.com/",
+  "name": "dhh5.com",
+  "description": "Free online converters and calculators for developers, designers, musicians and pilots.",
+  "inLanguage": "en"
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert Anything Online — Free & Instant</h1>
-  <p>Text, Binary, RGB, HEX, JSON, XML, Time Zones, Units — All in One Place</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#tools">All tools</a>
+      <a href="#developer">Developer</a>
+      <a href="#music">Music</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<section class="page-head">
+  <div class="wrap">
+    <h1>Free Online Converters &amp; Calculators</h1>
+    <p>Text, colors, time zones, developer formats, units and tempo — no signup, nothing uploaded.</p>
 
-  <!-- 广告位（页面顶部中间） 
-  <div class="ad-slot">
-   
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-     [Your Google Ad Here]
-    </div>
+    <form class="search-box" role="search" onsubmit="return false;">
+      <label class="sr-only" for="q">Search tools</label>
+      <input type="text" id="q" placeholder="Search tools — try &quot;bpm&quot;, &quot;hex&quot;, &quot;epoch&quot;…" autocomplete="off">
+      <button type="button" class="btn btn-secondary" id="clearQ">Clear</button>
+    </form>
+    <p class="hint" id="searchStatus" aria-live="polite"></p>
   </div>
- <!-- Google AdSense 广告代码位（示例用 div 占位）  -->
+</section>
 
-  <!-- 工具聚合 -->
-  <div class="tool-grid">
+<main class="wrap" id="tools">
 
-    <div class="tool-card">
-      <h2><a href="convert-text-to-binary.html">Convert Text to Binary Online</a></h2>
-      <p>Instantly convert text to binary code — free, no signup required.</p>
+  <!-- ============ Developer ============ -->
+  <h2 id="developer">Developer tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card" data-kw="text binary utf8 ascii 01">
+      <h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3>
+      <p>Convert text to binary and back using real UTF-8 — emoji supported.</p>
+    </li>
+    <li class="tool-card" data-kw="json xml converter developer">
+      <h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3>
+      <p>Two-way JSON/XML conversion with proper escaping and formatting.</p>
+    </li>
+    <li class="tool-card" data-kw="decimal octal base 8 number">
+      <h3><a href="/convert-decimal-to-octal.html">Decimal → Octal</a></h3>
+      <p>Convert base-10 numbers to base-8, instantly.</p>
+    </li>
+    <li class="tool-card" data-kw="epoch unix timestamp date time">
+      <h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3>
+      <p>Turn a Unix timestamp into a readable date, in UTC and your local time.</p>
+    </li>
+  </ul>
+
+  <!-- ============ Color ============ -->
+  <h2 id="color">Color tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card" data-kw="rgb hex color designer css">
+      <h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3>
+      <p>Two-way RGB/HEX color conversion with live preview and copy.</p>
+    </li>
+    <li class="tool-card" data-kw="rgba hex alpha transparency color">
+      <h3><a href="/convert-rgba-to-hex.html">RGBA → HEX</a></h3>
+      <p>Include the alpha channel when converting to a HEX color code.</p>
+    </li>
+  </ul>
+
+  <!-- ============ Time ============ -->
+  <h2 id="time">Time zone tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card" data-kw="utc est eastern time zone">
+      <h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3>
+      <p>Convert UTC to US Eastern time, with daylight saving handled automatically.</p>
+    </li>
+    <li class="tool-card" data-kw="utc edt daylight eastern time zone">
+      <h3><a href="/convert-utc-to-edt.html">UTC → EDT</a></h3>
+      <p>Convert UTC to Eastern Daylight Time (UTC−4).</p>
+    </li>
+  </ul>
+
+  <!-- ============ Units ============ -->
+  <h2 id="units">Unit converters</h2>
+  <ul class="tool-grid">
+    <li class="tool-card" data-kw="knots mph speed aviation marine wind">
+      <h3><a href="/convert-knots-to-mph.html">Knots → MPH</a></h3>
+      <p>Speed conversion for aviation, marine and weather use.</p>
+    </li>
+  </ul>
+
+  <!-- ============ Music ============ -->
+  <h2 id="music">Music &amp; audio tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card" data-kw="bpm milliseconds tempo beat music audio delay">
+      <h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3>
+      <p>Work out note lengths in ms for delay, reverb and sequencer timing.</p>
+    </li>
+  </ul>
+
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
     </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-rgb-to-hex.html">Convert RGB to HEX Color</a></h2>
-      <p>RGB to HEX and HEX to RGB color converter for designers & developers.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-utc-to-est.html">Convert UTC to EST Time</a></h2>
-      <p>Convert UTC time to EST or other time zones easily.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-json-to-xml.html">Convert JSON to XML</a></h2>
-      <p>Free online JSON to XML and XML to JSON converter.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-decimal-to-octal.html">Convert Decimal to Octal</a></h2>
-      <p>Convert decimal numbers to octal instantly online.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-knots-to-mph.html">Convert Knots to MPH</a></h2>
-      <p>Knots to miles per hour speed converter for aviation & marine use.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-epoch-to-date.html">Convert Epoch to Human Date</a></h2>
-      <p>Epoch timestamp to human-readable date converter.</p>
-    </div>
-
-    <div class="tool-card">
-      <h2><a href="convert-bpm-to-ms.html">Convert BPM to Milliseconds</a></h2>
-      <p>Convert beats per minute (BPM) to milliseconds for music production.</p>
-    </div>
-
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser; nothing is uploaded.</div>
   </div>
-
-  <!-- 广告位（底部中间） 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-
-</div>
-
-<footer>
-  &copy; 2025 www.dhh5.com — All rights reserved. Free tools for developers, designers, students.
 </footer>
+
+<script>
+/* Client-side tool filter. Keeps the homepage usable as the tool count grows. */
+(function () {
+  var input = document.getElementById('q');
+  var clear = document.getElementById('clearQ');
+  var status = document.getElementById('searchStatus');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.tool-card'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main h2'));
+
+  function apply() {
+    var q = input.value.trim().toLowerCase();
+    var hits = 0;
+    cards.forEach(function (card) {
+      var hay = (card.textContent + ' ' + (card.dataset.kw || '')).toLowerCase();
+      var match = !q || hay.indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) hits++;
+    });
+    // Hide category headings that have no visible tools left
+    sections.forEach(function (h2) {
+      var visible = 0, node = h2.nextElementSibling;
+      while (node && node.tagName === 'UL') {
+        Array.prototype.forEach.call(node.querySelectorAll('.tool-card'), function (c) {
+          if (c.style.display !== 'none') visible++;
+        });
+        node = node.nextElementSibling;
+      }
+      h2.style.display = visible ? '' : 'none';
+      if (node && node.classList.contains('tool-grid')) node.style.display = visible ? '' : 'none';
+    });
+    status.textContent = q
+      ? hits + (hits === 1 ? ' tool found' : ' tools found')
+      : '';
+  }
+
+  input.addEventListener('input', apply);
+  clear.addEventListener('click', function () {
+    input.value = '';
+    apply();
+    input.focus();
+  });
+})();
+</script>
 
 </body>
 </html>

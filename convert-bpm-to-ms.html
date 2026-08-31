@@ -1,176 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta 
-    name="description" 
-    content="Free online BPM to milliseconds converter. Instantly convert beats per minute (BPM) to milliseconds per beat (ms) — fast, accurate, and no signup required." 
-  />
-  <title>Convert BPM to Milliseconds Online — Free BPM to ms Converter</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: #f9f9f9;
-      color: #333;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BPM to Milliseconds Converter — Note Length Calculator</title>
+<meta name="description" content="Convert BPM to milliseconds instantly. Get note lengths, delay times, reverb pre-delay and bar durations for any tempo. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-bpm-to-ms.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-bpm-to-ms.html">
+<meta property="og:title" content="BPM to Milliseconds Converter — Note Length Calculator">
+<meta property="og:description" content="Get note lengths, delay times and bar durations in ms for any tempo.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BPM to Milliseconds Converter">
+<meta name="twitter:description" content="Note lengths, delay times and bar durations in ms for any tempo.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "BPM to Milliseconds Converter",
+      "url": "https://www.dhh5.com/convert-bpm-to-ms.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Music & audio tools", "item": "https://www.dhh5.com/#music" },
+        { "@type": "ListItem", "position": 3, "name": "BPM to Milliseconds" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert BPM to milliseconds?",
+          "acceptedAnswer": { "@type": "Answer", "text": "One beat lasts 60,000 divided by the BPM, in milliseconds. At 120 BPM that is 60000 / 120 = 500 ms per beat. Other note lengths scale from there: an eighth note is half a beat, a sixteenth note is a quarter of a beat." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set a delay to match the tempo?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Enter the track tempo and read off the note value you want the repeats to land on. A dotted eighth delay time is a very common choice because it sits between beats and fills the gaps without cluttering the rhythm." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a triplet in milliseconds?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A triplet divides a beat into three equal parts instead of two, so each triplet note lasts two thirds of the straight note. At 120 BPM a quarter note is 500 ms, so a quarter-note triplet is 333.33 ms." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this work for any time signature?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The note lengths are independent of time signature. The bar length shown assumes 4/4, which is the most common; for other signatures multiply the quarter note length by the number of beats per bar." }
+        }
+      ]
     }
-    header {
-      background: #007ACC;
-      color: #fff;
-      padding: 1.5em 1em;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 2em auto;
-      padding: 0 1em;
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 0.5em;
-    }
-    input[type="number"] {
-      width: 100%;
-      padding: 0.7em;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-bottom: 1em;
-      box-sizing: border-box;
-    }
-    button {
-      background: #007ACC;
-      color: white;
-      border: none;
-      padding: 0.75em 1.5em;
-      font-size: 1em;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      margin-bottom: 1.5em;
-      width: 100%;
-    }
-    button:hover {
-      background: #005fa3;
-    }
-    .result {
-      background: #fff;
-      padding: 1em;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      font-weight: bold;
-      font-size: 1.25em;
-      word-break: break-word;
-      min-height: 50px;
-    }
-    .ad-slot {
-      text-align: center;
-      margin: 1.5em 0;
-    }
-    h1, h2, h3, h4 {
-      line-height: 1.3;
-    }
-    ul {
-      margin-left: 1.2em;
-      margin-bottom: 2em;
-    }
-    footer {
-      text-align: center;
-      padding: 1em 0;
-      font-size: 0.9em;
-      color: #777;
-      border-top: 1px solid #ddd;
-      margin-top: 3em;
-    }
-    a {
-      color: #007ACC;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert BPM to Milliseconds Online</h1>
-  <p>Free, Fast & Accurate BPM to ms Converter — No Signup Needed</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#music">Music tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#music">Music &amp; audio tools</a></li>
+      <li>BPM to Milliseconds</li>
+    </ol>
+  </nav>
+
+  <h1>BPM to Milliseconds Converter</h1>
+  <p>Enter a tempo and get every note length in milliseconds — useful for setting
+     <strong>delay times</strong>, <strong>reverb pre-delay</strong>, LFO rates, sidechain release
+     and sequencer step timing.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="bpmInput">Tempo (BPM)</label>
+      <input type="number" id="bpmInput" min="1" max="1000" step="0.01" placeholder="e.g. 120" inputmode="decimal">
+      <p class="hint">Any value above zero. Fractional tempos such as 127.5 are supported.</p>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="convert()">Convert</button>
+      <span class="hint">or just start typing — results update as you go</span>
+    </div>
+
+    <div class="result-block" style="margin-top:20px">
+      <div class="result-label">One beat (quarter note)</div>
+      <div class="result" id="msResult" aria-live="polite">Enter a tempo to see the result.</div>
+    </div>
+
+    <h3>Note lengths at this tempo</h3>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Note</th><th class="num">Straight</th><th class="num">Dotted</th><th class="num">Triplet</th></tr></thead>
+        <tbody id="noteTable">
+          <tr><td colspan="4" style="color:var(--text-muted)">Enter a tempo above.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="btn-row" style="margin-top:14px">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#msResult">Copy beat length</button>
+      <button type="button" class="btn btn-secondary btn-small" onclick="copyTable()">Copy full table</button>
+      <span class="hint" id="status" aria-live="polite"></span>
     </div>
   </div>
--->
-  <h2>BPM to Milliseconds Converter Tool</h2>
-  <p>Enter the beats per minute (BPM) value below to instantly convert it to the duration of one beat in milliseconds (ms). This tool is fast, reliable, and completely free.</p>
 
-  <label for="bpmInput">Beats Per Minute (BPM)</label>
-  <input type="number" id="bpmInput" min="1" placeholder="e.g. 120" oninput="convertBPMtoMS()" />
-
-  <button onclick="convertBPMtoMS()">Convert BPM to ms</button>
-
-  <h3>Milliseconds per Beat (ms)</h3>
-  <div id="msResult" class="result">Your result will appear here.</div>
-
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
--->
-  <h4>Why Convert BPM to Milliseconds?</h4>
-  <p>Musicians, producers, and DJs often need to understand the exact timing of beats. Converting BPM to milliseconds per beat helps in sequencing, programming drum machines, and syncing audio precisely.</p>
-
-  <h4>Frequently Asked Questions (FAQs)</h4>
+  <h2>How BPM converts to milliseconds</h2>
+  <p>There are 60,000 milliseconds in a minute, so one beat lasts:</p>
+  <p><code>milliseconds per beat = 60000 ÷ BPM</code></p>
+  <p><strong>Worked example.</strong> At 120 BPM:</p>
+  <p><code>60000 ÷ 120 = 500 ms</code> per quarter note</p>
+  <p>Everything else scales from that one number:</p>
   <ul>
-    <li><strong>Is this BPM to milliseconds converter free?</strong> Yes, it’s completely free with no sign-up required.</li>
-    <li><strong>How is the conversion calculated?</strong> The formula is: <code>Milliseconds = 60000 ÷ BPM</code>.</li>
-    <li><strong>Can I convert any BPM value?</strong> Yes, the tool supports any BPM greater than zero.</li>
-    <li><strong>Is my data stored?</strong> No. All calculations happen in your browser; no data is sent anywhere.</li>
+    <li><strong>Eighth note</strong> = half a beat → <code>500 ÷ 2 = 250 ms</code></li>
+    <li><strong>Sixteenth note</strong> = a quarter of a beat → <code>500 ÷ 4 = 125 ms</code></li>
+    <li><strong>Dotted</strong> = 1.5× the straight value → dotted eighth <code>250 × 1.5 = 375 ms</code></li>
+    <li><strong>Triplet</strong> = ⅔ of the straight value → eighth triplet <code>250 × ⅔ = 166.67 ms</code></li>
   </ul>
 
-  <!-- 底部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
+  <h2>Choosing a delay time</h2>
+  <p>Delay is the most common reason to need these numbers. A delay set to an exact note value stays
+     locked to the groove; a delay set to an arbitrary number slowly drifts out of time.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Delay setting</th><th>What it sounds like</th></tr></thead>
+      <tbody>
+        <tr><td>Quarter note</td><td>Clear, obvious repeats sitting on every beat</td></tr>
+        <tr><td>Eighth note</td><td>Tighter, doubles the repeat density</td></tr>
+        <tr><td><strong>Dotted eighth</strong></td><td>The classic choice — falls between beats and fills gaps without clutter</td></tr>
+        <tr><td>Eighth triplet</td><td>Rolling, shuffle-like feel</td></tr>
+        <tr><td>Sixteenth</td><td>Very tight; can turn into a flanger or comb filter</td></tr>
+      </tbody>
+    </table>
   </div>
--->
 
-</div>
+  <h2>Note length reference table</h2>
+  <p>Common tempos, with straight note values in milliseconds:</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th class="num">BPM</th><th class="num">1/1</th><th class="num">1/2</th><th class="num">1/4</th>
+          <th class="num">1/8</th><th class="num">1/16</th><th class="num">1/32</th><th class="num">Bar (4/4)</th>
+        </tr>
+      </thead>
+      <tbody id="refTable"></tbody>
+    </table>
+  </div>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free BPM to Milliseconds Converter | Instant, Secure, No Signup
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How do you convert BPM to milliseconds?</dt>
+    <dd>One beat lasts 60,000 divided by the BPM, in milliseconds. At 120 BPM that is 60000 / 120 = 500 ms per beat. Other note lengths scale from there: an eighth note is half a beat, a sixteenth note is a quarter of a beat.</dd>
+
+    <dt>How do I set a delay to match the tempo?</dt>
+    <dd>Enter the track tempo and read off the note value you want the repeats to land on. A dotted eighth delay time is a very common choice because it sits between beats and fills the gaps without cluttering the rhythm.</dd>
+
+    <dt>What is a triplet in milliseconds?</dt>
+    <dd>A triplet divides a beat into three equal parts instead of two, so each triplet note lasts two thirds of the straight note. At 120 BPM a quarter note is 500 ms, so a quarter-note triplet is 333.33 ms.</dd>
+
+    <dt>Does this work for any time signature?</dt>
+    <dd>The note lengths are independent of time signature. The bar length shown assumes 4/4, which is the most common; for other signatures multiply the quarter note length by the number of beats per bar.</dd>
+
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The calculation runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-knots-to-mph.html">Knots → MPH</a></h3><p>Speed conversion for aviation and marine use.</p></li>
+    <li class="tool-card"><h3><a href="/convert-utc-to-est.html">UTC → EST</a></h3><p>US Eastern time with automatic daylight saving.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion with live preview.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgba-to-hex.html">RGBA → HEX</a></h3><p>Convert colors that include an alpha channel.</p></li>
+    <li class="tool-card"><h3><a href="/convert-text-to-binary.html">Text ↔ Binary</a></h3><p>Convert text to binary using real UTF-8.</p></li>
+  </ul>
+
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertBPMtoMS() {
-    const bpmInput = document.getElementById('bpmInput').value;
-    const resultEl = document.getElementById('msResult');
+/* ---------------------------------------------------------------------------
+   Note lengths are derived from a single beat, so all values stay consistent.
+   quarter = 60000 / bpm
+   straight: 1/1=4q  1/2=2q  1/4=q  1/8=q/2  1/16=q/4  1/32=q/8
+   dotted   = straight x 1.5
+   triplet  = straight x 2/3
+--------------------------------------------------------------------------- */
+var NOTES = [
+  { label: 'Whole note (1/1)',  mult: 4 },
+  { label: 'Half note (1/2)',   mult: 2 },
+  { label: 'Quarter note (1/4)',mult: 1 },
+  { label: 'Eighth note (1/8)', mult: 0.5 },
+  { label: 'Sixteenth (1/16)',  mult: 0.25 },
+  { label: '32nd note (1/32)',  mult: 0.125 }
+];
 
-    if (!bpmInput) {
-      resultEl.textContent = 'Please enter a BPM value.';
-      return;
-    }
+function ms(value) {
+  return value.toFixed(2);
+}
 
-    const bpm = Number(bpmInput);
-    if (isNaN(bpm) || bpm <= 0) {
-      resultEl.textContent = 'Please enter a valid BPM number greater than zero.';
-      return;
-    }
+function convert() {
+  var raw = document.getElementById('bpmInput').value;
+  var out = document.getElementById('msResult');
+  var tbody = document.getElementById('noteTable');
 
-    const msPerBeat = 60000 / bpm;
-    resultEl.textContent = msPerBeat.toFixed(2) + ' ms per beat';
+  if (raw === '') {
+    out.textContent = 'Enter a tempo to see the result.';
+    out.classList.remove('error');
+    tbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted)">Enter a tempo above.</td></tr>';
+    return;
   }
+
+  var bpm = parseFloat(raw);
+  if (isNaN(bpm) || bpm <= 0) {
+    out.textContent = 'Please enter a tempo greater than zero.';
+    out.classList.add('error');
+    tbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted)">Enter a tempo above.</td></tr>';
+    return;
+  }
+
+  var quarter = 60000 / bpm;
+  out.textContent = ms(quarter) + ' ms per beat  (' + (bpm / 60).toFixed(3) + ' Hz)';
+  out.classList.remove('error');
+
+  var rows = NOTES.map(function (n) {
+    var straight = quarter * n.mult;
+    return '<tr><td>' + n.label + '</td>' +
+           '<td class="num">' + ms(straight) + '</td>' +
+           '<td class="num">' + ms(straight * 1.5) + '</td>' +
+           '<td class="num">' + ms(straight * (2 / 3)) + '</td></tr>';
+  });
+  // A bar is only meaningful for whole/half/quarter subdivisions, so add it separately
+  rows.push('<tr><td><strong>One bar (4/4)</strong></td>' +
+            '<td class="num"><strong>' + ms(quarter * 4) + '</strong></td>' +
+            '<td class="num">' + ms(quarter * 6) + '</td>' +
+            '<td class="num">' + ms(quarter * 4 * (2 / 3)) + '</td></tr>');
+  tbody.innerHTML = rows.join('');
+}
+
+function copyTable() {
+  var raw = document.getElementById('bpmInput').value;
+  var bpm = parseFloat(raw);
+  if (!bpm || bpm <= 0) { dhToast('Enter a tempo first'); return; }
+  var quarter = 60000 / bpm;
+  var lines = ['BPM: ' + bpm, 'Beat (1/4): ' + ms(quarter) + ' ms'];
+  NOTES.forEach(function (n) {
+    var s = quarter * n.mult;
+    lines.push(n.label + ': ' + ms(s) + ' ms  |  dotted ' + ms(s * 1.5) +
+               ' ms  |  triplet ' + ms(s * (2 / 3)) + ' ms');
+  });
+  lines.push('Bar (4/4): ' + ms(quarter * 4) + ' ms');
+  var text = lines.join('\n');
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(function () { dhToast('Table copied'); });
+  } else {
+    dhToast('Copy not available');
+  }
+}
+
+/* Static reference table for common tempos */
+(function buildReference() {
+  var tempos = [60, 70, 75, 80, 90, 100, 110, 120, 124, 128, 130, 140, 150, 160, 174, 180, 200];
+  var rows = tempos.map(function (bpm) {
+    var q = 60000 / bpm;
+    return '<tr><td class="num">' + bpm + '</td>' +
+           '<td class="num">' + ms(q * 4) + '</td>' +
+           '<td class="num">' + ms(q * 2) + '</td>' +
+           '<td class="num"><strong>' + ms(q) + '</strong></td>' +
+           '<td class="num">' + ms(q / 2) + '</td>' +
+           '<td class="num">' + ms(q / 4) + '</td>' +
+           '<td class="num">' + ms(q / 8) + '</td>' +
+           '<td class="num">' + ms(q * 4) + '</td></tr>';
+  });
+  document.getElementById('refTable').innerHTML = rows.join('');
+})();
+
+var state = dhUrlState('bpm', function (v) {
+  document.getElementById('bpmInput').value = v;
+  convert();
+});
+document.getElementById('bpmInput').addEventListener('input', function () {
+  state.save(this.value);
+  convert();
+});
 </script>
 
 </body>

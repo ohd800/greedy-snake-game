@@ -1,88 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Free online tool to convert text to binary code instantly. Convert text to binary online without signup — simple, fast and secure.">
-  <title>Convert Text to Binary Online — Free Instant Converter</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #007ACC; color: #fff; padding: 1em; text-align: center; }
-    .container { max-width: 800px; margin: auto; padding: 1em; }
-    textarea, input[type="text"] { width: 100%; padding: 0.8em; font-size: 1em; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 1em; }
-    .result { background: #fff; padding: 1em; border-radius: 6px; border: 1px solid #ddd; word-break: break-word; }
-    .ad-slot { text-align: center; margin: 1em 0; }
-    footer { text-align: center; font-size: 0.9em; color: #666; padding: 1em; }
-    button { background: #007ACC; color: #fff; padding: 0.6em 1.2em; border: none; border-radius: 6px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text to Binary Converter — Free UTF-8 Binary Tool</title>
+<meta name="description" content="Convert text to binary and binary back to text using real UTF-8 encoding. Supports emoji and accented characters. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-text-to-binary.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-text-to-binary.html">
+<meta property="og:title" content="Text to Binary Converter — Free UTF-8 Binary Tool">
+<meta property="og:description" content="Convert text to binary and back using real UTF-8. Emoji and accented characters supported.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Text to Binary Converter">
+<meta name="twitter:description" content="Two-way text/binary conversion using real UTF-8 encoding.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Text to Binary Converter",
+      "url": "https://www.dhh5.com/convert-text-to-binary.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Developer tools", "item": "https://www.dhh5.com/#developer" },
+        { "@type": "ListItem", "position": 3, "name": "Text to Binary" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why does one character sometimes produce several bytes of binary?",
+          "acceptedAnswer": { "@type": "Answer", "text": "This tool encodes text as UTF-8, the standard encoding on the web. Basic English letters use one byte, accented characters such as e-acute use two, and emoji use four. Tools that emit a fixed 8 bits per character cannot represent emoji correctly." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I convert binary back to text?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Paste a binary string into the lower box and the decoded text appears immediately. Spaces between bytes are optional." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my text uploaded anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Encoding and decoding happen entirely in your browser; nothing you type is sent to a server." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 — replace G-XXXXXXXXXX with the dhh5.com GA4 Measurement ID (do NOT reuse the chinaetfguide ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
 </head>
 <body>
 
-<header>
-  <h1>Convert Text to Binary Online</h1>
-  <p>Free, Instant, No Signup — The Best Text to Binary Converter</p>
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#developer">Developer tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
+<main class="wrap">
 
-  <!-- 顶部广告位 
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#developer">Developer tools</a></li>
+      <li>Text to Binary</li>
+    </ol>
+  </nav>
+
+  <h1>Text to Binary Converter</h1>
+  <p>Convert text to binary and binary back to text using <strong>real UTF-8 encoding</strong> —
+     so emoji, accents and non-Latin scripts all round-trip correctly.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="textInput">Text</label>
+      <textarea id="textInput" rows="3" placeholder="Type text here — emoji welcome 😀"></textarea>
+    </div>
+
+    <div class="result-block">
+      <div class="result-label">Binary (UTF-8)</div>
+      <div class="result mono" id="binaryResult" aria-live="polite" style="font-size:.95rem;font-weight:400;line-height:1.6">Binary output appears here.</div>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#binaryResult">Copy binary</button>
+      <button type="button" class="btn btn-secondary btn-small" onclick="swap()">↑ Send result back up</button>
+      <button type="button" class="btn btn-secondary btn-small" onclick="clearAll()">Clear</button>
+      <span class="hint" id="byteCount"></span>
     </div>
   </div>
--->
-  <!-- 工具 -->
-  <h2>Free Online Text to Binary Converter</h2>
-  <p>Paste your text below to convert it to binary code. Our tool is fast, free, and works without any registration.</p>
 
-  <textarea id="inputText" rows="5" placeholder="Enter your text here..."></textarea>
-  <button onclick="convertToBinary()">Convert to Binary</button>
+  <div class="card">
+    <div class="field">
+      <label for="binInput">Binary</label>
+      <textarea id="binInput" rows="3" placeholder="Paste binary, e.g. 01001000 01101001 — spaces optional"></textarea>
+    </div>
 
-  <h3>Binary Output</h3>
-  <div id="binaryResult" class="result">Your binary code will appear here.</div>
+    <div class="result-block">
+      <div class="result-label">Decoded text</div>
+      <div class="result" id="decodedResult" aria-live="polite" style="font-weight:400">Decoded text appears here.</div>
+    </div>
 
-  <!-- 中部广告位 
-  <div class="ad-slot">
-    <div style="width: 728px; height: 90px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
+    <div class="btn-row">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#decodedResult">Copy text</button>
     </div>
   </div>
--->
 
-  <h4>What is Text to Binary Conversion?</h4>
-  <p>Text to binary conversion transforms human-readable characters into binary code that computers can process. For example, the letter <strong>A</strong> becomes <strong>01000001</strong>. This tool helps developers, students, and tech enthusiasts convert text to binary online, free and instantly.</p>
+  <h2>How text becomes binary</h2>
+  <p>Computers store text as bytes. This tool encodes your text with <strong>UTF-8</strong>, the
+     dominant encoding on the web, then prints each byte as 8 binary digits.</p>
+  <p><strong>Worked example.</strong> The letter <code>H</code> is code point U+0048, which is 72 in
+     decimal. In UTF-8 it fits in a single byte:</p>
+  <p><code>72 → 01001000</code></p>
+  <p>The string <code>Hi</code> therefore becomes:</p>
+  <p><code>01001000 01101001</code></p>
+  <p>Characters outside ASCII need more than one byte, which is where many simple converters break:</p>
 
-  <h4>FAQs</h4>
-  <ul>
-    <li><strong>Is this text to binary converter free?</strong> Yes! It is 100% free and requires no signup.</li>
-    <li><strong>Does it work offline?</strong> This page works entirely in your browser. No data is sent to any server.</li>
-    <li><strong>Can I convert large amounts of text?</strong> Yes. However, for very large texts, performance depends on your browser.</li>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th>Character</th><th>Code point</th><th>UTF-8 bytes</th><th>Binary</th></tr></thead>
+      <tbody>
+        <tr><td>H</td><td class="num">U+0048</td><td class="num">1</td><td><code>01001000</code></td></tr>
+        <tr><td>i</td><td class="num">U+0069</td><td class="num">1</td><td><code>01101001</code></td></tr>
+        <tr><td>é</td><td class="num">U+00E9</td><td class="num">2</td><td><code>11000011 10101001</code></td></tr>
+        <tr><td>€</td><td class="num">U+20AC</td><td class="num">3</td><td><code>11100010 10000010 10101100</code></td></tr>
+        <tr><td>😀</td><td class="num">U+1F600</td><td class="num">4</td><td><code>11110000 10011111 10011000 10000000</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>Why does one character sometimes produce several bytes of binary?</dt>
+    <dd>This tool encodes text as UTF-8, the standard encoding on the web. Basic English letters use one byte, accented characters such as é use two, and emoji use four. Tools that emit a fixed 8 bits per character cannot represent emoji correctly.</dd>
+
+    <dt>Can I convert binary back to text?</dt>
+    <dd>Yes. Paste a binary string into the lower box and the decoded text appears immediately. Spaces between bytes are optional.</dd>
+
+    <dt>Is my text uploaded anywhere?</dt>
+    <dd>No. Encoding and decoding happen entirely in your browser; nothing you type is sent to a server.</dd>
+
+    <dt>Why is my binary output different from another converter?</dt>
+    <dd>Other tools may use 16-bit Unicode units or Latin-1 instead of UTF-8. That is fine for plain English but produces different — and usually undecodable — results for emoji and accented characters.</dd>
+  </dl>
+
+  <h2>Related tools</h2>
+  <ul class="tool-grid">
+    <li class="tool-card"><h3><a href="/convert-decimal-to-octal.html">Decimal → Octal</a></h3><p>Base-10 to base-8 number conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-json-to-xml.html">JSON ↔ XML</a></h3><p>Two-way developer format conversion.</p></li>
+    <li class="tool-card"><h3><a href="/convert-epoch-to-date.html">Epoch → Date</a></h3><p>Turn a Unix timestamp into a readable date.</p></li>
+    <li class="tool-card"><h3><a href="/convert-rgb-to-hex.html">RGB ↔ HEX</a></h3><p>Two-way color conversion with live preview.</p></li>
+    <li class="tool-card"><h3><a href="/convert-bpm-to-ms.html">BPM → Milliseconds</a></h3><p>Note lengths in ms for delay timing.</p></li>
+    <li class="tool-card"><h3><a href="/convert-knots-to-mph.html">Knots → MPH</a></h3><p>Speed conversion for aviation and marine use.</p></li>
   </ul>
 
-  <!-- 底部广告位
-  <div class="ad-slot">
-    <div style="width: 300px; height: 250px; background: #ddd; display: inline-block;">
-      [Your Google Ad Here]
-    </div>
-  </div>
-   -->
-</div>
+  <p class="updated">Last updated: August 31, 2026</p>
+</main>
 
-<footer>
-  &copy; 2025 www.dhh5.com — Free Text to Binary Converter | Instant, Secure, No Signup
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#tools">All tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div>&copy; 2026 dhh5.com — Free online tools. All calculations run in your browser.</div>
+  </div>
 </footer>
 
 <script>
-  function convertToBinary() {
-    const text = document.getElementById('inputText').value;
-    let binary = '';
-    for (let i = 0; i < text.length; i++) {
-      binary += text[i].charCodeAt(0).toString(2).padStart(8, '0') + ' ';
-    }
-    document.getElementById('binaryResult').textContent = binary.trim();
+/* ---------------------------------------------------------------------------
+   Fix: the original used charCodeAt(i), which returns a 16-bit UTF-16 code
+   unit. Non-ASCII text therefore came out as Latin-1-ish bits, and emoji were
+   split into two surrogate halves. TextEncoder gives us true UTF-8 bytes,
+   which is what every decoder expects.
+--------------------------------------------------------------------------- */
+function textToBinary(text) {
+  var bytes = new TextEncoder().encode(text);
+  var out = [];
+  for (var i = 0; i < bytes.length; i++) {
+    out.push(bytes[i].toString(2).padStart(8, '0'));
   }
+  return { binary: out.join(' '), bytes: bytes.length };
+}
+
+function binaryToText(bin) {
+  var clean = bin.replace(/[^01]/g, '');
+  if (!clean) return { text: '', error: 'Please enter a binary string (only 0 and 1).' };
+  if (clean.length % 8 !== 0) {
+    return {
+      text: '',
+      error: 'Binary length must be a multiple of 8 — you have ' +
+             (clean.length % 8) + ' extra bit(s).'
+    };
+  }
+  var bytes = new Uint8Array(clean.length / 8);
+  for (var i = 0; i < bytes.length; i++) {
+    bytes[i] = parseInt(clean.substr(i * 8, 8), 2);
+  }
+  try {
+    return { text: new TextDecoder('utf-8', { fatal: true }).decode(bytes), error: null };
+  } catch (e) {
+    return { text: '', error: 'That byte sequence is not valid UTF-8.' };
+  }
+}
+
+function updateText() {
+  var raw = document.getElementById('textInput').value;
+  var out = document.getElementById('binaryResult');
+  var count = document.getElementById('byteCount');
+
+  if (!raw) {
+    out.textContent = 'Binary output appears here.';
+    out.classList.remove('error');
+    count.textContent = '';
+    return;
+  }
+  var r = textToBinary(raw);
+  out.textContent = r.binary;
+  out.classList.remove('error');
+  count.textContent = r.bytes + (r.bytes === 1 ? ' byte' : ' bytes') +
+                      ' · ' + raw.length + ' character' + (raw.length === 1 ? '' : 's');
+}
+
+function updateBinary() {
+  var raw = document.getElementById('binInput').value;
+  var out = document.getElementById('decodedResult');
+
+  if (!raw.trim()) {
+    out.textContent = 'Decoded text appears here.';
+    out.classList.remove('error');
+    return;
+  }
+  var r = binaryToText(raw);
+  if (r.error) {
+    out.textContent = r.error;
+    out.classList.add('error');
+    return;
+  }
+  out.textContent = r.text === '' ? '(empty string)' : r.text;
+  out.classList.remove('error');
+}
+
+function swap() {
+  var bin = document.getElementById('binaryResult').textContent;
+  if (bin && bin.indexOf('Binary output') !== 0) {
+    document.getElementById('binInput').value = bin;
+    updateBinary();
+  }
+}
+
+function clearAll() {
+  document.getElementById('textInput').value = '';
+  document.getElementById('binInput').value = '';
+  updateText();
+  updateBinary();
+}
+
+document.getElementById('textInput').addEventListener('input', updateText);
+document.getElementById('binInput').addEventListener('input', updateBinary);
 </script>
 
 </body>
