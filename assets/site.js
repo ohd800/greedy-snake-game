@@ -92,4 +92,26 @@
       return m.indexOf('.') === 0 ? '' : m;
     });
   };
+
+  /* ---------- Floating feedback button ---------- */
+  // Site-wide "Feedback" button (bottom-right) that opens a pre-filled email.
+  // Public mailto only — no backend, no data leaves the browser except the email app.
+  (function addFeedbackFab() {
+    if (document.getElementById('dh-feedback-fab')) return;
+    var EMAIL = '11587939@qq.com';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.id = 'dh-feedback-fab';
+    btn.className = 'feedback-fab';
+    btn.setAttribute('aria-label', 'Send feedback');
+    btn.innerHTML =
+      '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">' +
+      '<path fill="currentColor" d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z' +
+      'M7 9h10v2H7V9zm0 4h7v2H7v-2z"/></svg>' +
+      '<span class="feedback-fab__label">Feedback</span>';
+    btn.addEventListener('click', function () {
+      window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('dhh5.com Feedback');
+    });
+    document.body.appendChild(btn);
+  })();
 })();
