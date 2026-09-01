@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Note Frequency Chart — Every Note on the Piano (A0–C8) in Hz</title>
+<meta name="description" content="Complete note frequency chart for all 88 piano keys, A0 to C8: exact frequencies in Hz with MIDI note numbers, equal temperament, A4 = 440 Hz. Free, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/note-frequency-chart.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/note-frequency-chart.html">
+<meta property="og:title" content="Note Frequency Chart — Every Note on the Piano (A0–C8) in Hz">
+<meta property="og:description" content="All 88 piano keys from A0 to C8 with exact frequencies in Hz and MIDI numbers.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Note Frequency Chart — Every Note on the Piano (A0–C8) in Hz">
+<meta name="twitter:description" content="All 88 piano keys from A0 to C8 with exact frequencies in Hz and MIDI numbers.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Note Frequency Chart — Every Note on the Piano (A0–C8) in Hz",
+      "url": "https://www.dhh5.com/note-frequency-chart.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+      {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.dhh5.com/"
+      },
+      {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Music & audio tools",
+            "item": "https://www.dhh5.com/#music"
+      },
+      {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Note frequency chart",
+            "item": "https://www.dhh5.com/note-frequency-chart.html"
+      }
+]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+      {
+            "@type": "Question",
+            "name": "What frequency is A4?",
+            "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A4 is 440 Hz. It is the international tuning reference (ISO 16) and MIDI note 69. You can read more on the A4 = 440 Hz page."
+            }
+      },
+      {
+            "@type": "Question",
+            "name": "What is the frequency range of an 88-key piano?",
+            "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A standard 88-key piano runs from A0 at 27.50 Hz to C8 at 4186.01 Hz."
+            }
+      },
+      {
+            "@type": "Question",
+            "name": "What is middle C in Hz?",
+            "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Middle C (C4, MIDI 60) is 261.63 Hz. Note that some manufacturers, Yamaha among them, label this note C3 — the sound is identical, only the octave numbering differs."
+            }
+      },
+      {
+            "@type": "Question",
+            "name": "How do you calculate a note frequency from a MIDI number?",
+            "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Use f = 440 × 2^((m − 69) / 12), where m is the MIDI note number. MIDI 69 is A4 = 440 Hz, MIDI 60 is middle C, and each increase of 12 doubles the frequency."
+            }
+      },
+      {
+            "@type": "Question",
+            "name": "Do these frequencies change between instruments?",
+            "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The nominal frequencies do not, but real instruments vary. Pianos are stretched-tuned slightly, orchestras sometimes tune to 442 or 443 Hz rather than 440, and wind players bend pitch by design. The table gives the theoretical equal-temperament values."
+            }
+      }
+]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B34ML8T3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8B34ML8T3P');
+  </script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#music">Music tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#music">Music &amp; audio tools</a></li>
+      <li>Note frequency chart</li>
+    </ol>
+  </nav>
+
+  <h1>Note Frequency Chart — All 88 Piano Keys</h1>
+  <p>Every note on a standard 88-key piano, from A0 to C8, with its exact frequency in hertz and
+     its MIDI note number. Values use <strong>twelve-tone equal temperament</strong> with
+     <strong>A4 = 440 Hz</strong>, the international tuning standard (ISO 16).</p>
+
+  <div class="card">
+    <h2>Full range: A0 – C8</h2>
+    <p class="hint">Click any note to see that pitch class across every octave.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Note</th><th class="num">MIDI number</th><th class="num">Frequency (Hz)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A0</strong></a></td>
+            <td class="num">21</td>
+            <td class="num">27.50</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯0</strong></a></td>
+            <td class="num">22</td>
+            <td class="num">29.14</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B0</strong></a></td>
+            <td class="num">23</td>
+            <td class="num">30.87</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C1</strong></a></td>
+            <td class="num">24</td>
+            <td class="num">32.70</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯1</strong></a></td>
+            <td class="num">25</td>
+            <td class="num">34.65</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D1</strong></a></td>
+            <td class="num">26</td>
+            <td class="num">36.71</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯1</strong></a></td>
+            <td class="num">27</td>
+            <td class="num">38.89</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E1</strong></a></td>
+            <td class="num">28</td>
+            <td class="num">41.20</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F1</strong></a></td>
+            <td class="num">29</td>
+            <td class="num">43.65</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯1</strong></a></td>
+            <td class="num">30</td>
+            <td class="num">46.25</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G1</strong></a></td>
+            <td class="num">31</td>
+            <td class="num">49.00</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯1</strong></a></td>
+            <td class="num">32</td>
+            <td class="num">51.91</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A1</strong></a></td>
+            <td class="num">33</td>
+            <td class="num">55.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯1</strong></a></td>
+            <td class="num">34</td>
+            <td class="num">58.27</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B1</strong></a></td>
+            <td class="num">35</td>
+            <td class="num">61.74</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C2</strong></a></td>
+            <td class="num">36</td>
+            <td class="num">65.41</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯2</strong></a></td>
+            <td class="num">37</td>
+            <td class="num">69.30</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D2</strong></a></td>
+            <td class="num">38</td>
+            <td class="num">73.42</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯2</strong></a></td>
+            <td class="num">39</td>
+            <td class="num">77.78</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E2</strong></a></td>
+            <td class="num">40</td>
+            <td class="num">82.41</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F2</strong></a></td>
+            <td class="num">41</td>
+            <td class="num">87.31</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯2</strong></a></td>
+            <td class="num">42</td>
+            <td class="num">92.50</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G2</strong></a></td>
+            <td class="num">43</td>
+            <td class="num">98.00</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯2</strong></a></td>
+            <td class="num">44</td>
+            <td class="num">103.83</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A2</strong></a></td>
+            <td class="num">45</td>
+            <td class="num">110.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯2</strong></a></td>
+            <td class="num">46</td>
+            <td class="num">116.54</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B2</strong></a></td>
+            <td class="num">47</td>
+            <td class="num">123.47</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C3</strong></a></td>
+            <td class="num">48</td>
+            <td class="num">130.81</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯3</strong></a></td>
+            <td class="num">49</td>
+            <td class="num">138.59</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D3</strong></a></td>
+            <td class="num">50</td>
+            <td class="num">146.83</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯3</strong></a></td>
+            <td class="num">51</td>
+            <td class="num">155.56</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E3</strong></a></td>
+            <td class="num">52</td>
+            <td class="num">164.81</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F3</strong></a></td>
+            <td class="num">53</td>
+            <td class="num">174.61</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯3</strong></a></td>
+            <td class="num">54</td>
+            <td class="num">185.00</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G3</strong></a></td>
+            <td class="num">55</td>
+            <td class="num">196.00</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯3</strong></a></td>
+            <td class="num">56</td>
+            <td class="num">207.65</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A3</strong></a></td>
+            <td class="num">57</td>
+            <td class="num">220.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯3</strong></a></td>
+            <td class="num">58</td>
+            <td class="num">233.08</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B3</strong></a></td>
+            <td class="num">59</td>
+            <td class="num">246.94</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C4</strong></a></td>
+            <td class="num">60</td>
+            <td class="num">261.63</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯4</strong></a></td>
+            <td class="num">61</td>
+            <td class="num">277.18</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D4</strong></a></td>
+            <td class="num">62</td>
+            <td class="num">293.66</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯4</strong></a></td>
+            <td class="num">63</td>
+            <td class="num">311.13</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E4</strong></a></td>
+            <td class="num">64</td>
+            <td class="num">329.63</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F4</strong></a></td>
+            <td class="num">65</td>
+            <td class="num">349.23</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯4</strong></a></td>
+            <td class="num">66</td>
+            <td class="num">369.99</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G4</strong></a></td>
+            <td class="num">67</td>
+            <td class="num">392.00</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯4</strong></a></td>
+            <td class="num">68</td>
+            <td class="num">415.30</td>
+          </tr>
+          <tr class="hl">
+            <td><a href="/a-note-frequency.html"><strong>A4</strong></a></td>
+            <td class="num">69</td>
+            <td class="num"><strong>440.00</strong></td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯4</strong></a></td>
+            <td class="num">70</td>
+            <td class="num">466.16</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B4</strong></a></td>
+            <td class="num">71</td>
+            <td class="num">493.88</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C5</strong></a></td>
+            <td class="num">72</td>
+            <td class="num">523.25</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯5</strong></a></td>
+            <td class="num">73</td>
+            <td class="num">554.37</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D5</strong></a></td>
+            <td class="num">74</td>
+            <td class="num">587.33</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯5</strong></a></td>
+            <td class="num">75</td>
+            <td class="num">622.25</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E5</strong></a></td>
+            <td class="num">76</td>
+            <td class="num">659.26</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F5</strong></a></td>
+            <td class="num">77</td>
+            <td class="num">698.46</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯5</strong></a></td>
+            <td class="num">78</td>
+            <td class="num">739.99</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G5</strong></a></td>
+            <td class="num">79</td>
+            <td class="num">783.99</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯5</strong></a></td>
+            <td class="num">80</td>
+            <td class="num">830.61</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A5</strong></a></td>
+            <td class="num">81</td>
+            <td class="num">880.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯5</strong></a></td>
+            <td class="num">82</td>
+            <td class="num">932.33</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B5</strong></a></td>
+            <td class="num">83</td>
+            <td class="num">987.77</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C6</strong></a></td>
+            <td class="num">84</td>
+            <td class="num">1046.50</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯6</strong></a></td>
+            <td class="num">85</td>
+            <td class="num">1108.73</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D6</strong></a></td>
+            <td class="num">86</td>
+            <td class="num">1174.66</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯6</strong></a></td>
+            <td class="num">87</td>
+            <td class="num">1244.51</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E6</strong></a></td>
+            <td class="num">88</td>
+            <td class="num">1318.51</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F6</strong></a></td>
+            <td class="num">89</td>
+            <td class="num">1396.91</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯6</strong></a></td>
+            <td class="num">90</td>
+            <td class="num">1479.98</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G6</strong></a></td>
+            <td class="num">91</td>
+            <td class="num">1567.98</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯6</strong></a></td>
+            <td class="num">92</td>
+            <td class="num">1661.22</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A6</strong></a></td>
+            <td class="num">93</td>
+            <td class="num">1760.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯6</strong></a></td>
+            <td class="num">94</td>
+            <td class="num">1864.66</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B6</strong></a></td>
+            <td class="num">95</td>
+            <td class="num">1975.53</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C7</strong></a></td>
+            <td class="num">96</td>
+            <td class="num">2093.00</td>
+          </tr>
+          <tr>
+            <td><a href="/c-sharp-note-frequency.html"><strong>C♯7</strong></a></td>
+            <td class="num">97</td>
+            <td class="num">2217.46</td>
+          </tr>
+          <tr>
+            <td><a href="/d-note-frequency.html"><strong>D7</strong></a></td>
+            <td class="num">98</td>
+            <td class="num">2349.32</td>
+          </tr>
+          <tr>
+            <td><a href="/d-sharp-note-frequency.html"><strong>D♯7</strong></a></td>
+            <td class="num">99</td>
+            <td class="num">2489.02</td>
+          </tr>
+          <tr>
+            <td><a href="/e-note-frequency.html"><strong>E7</strong></a></td>
+            <td class="num">100</td>
+            <td class="num">2637.02</td>
+          </tr>
+          <tr>
+            <td><a href="/f-note-frequency.html"><strong>F7</strong></a></td>
+            <td class="num">101</td>
+            <td class="num">2793.83</td>
+          </tr>
+          <tr>
+            <td><a href="/f-sharp-note-frequency.html"><strong>F♯7</strong></a></td>
+            <td class="num">102</td>
+            <td class="num">2959.96</td>
+          </tr>
+          <tr>
+            <td><a href="/g-note-frequency.html"><strong>G7</strong></a></td>
+            <td class="num">103</td>
+            <td class="num">3135.96</td>
+          </tr>
+          <tr>
+            <td><a href="/g-sharp-note-frequency.html"><strong>G♯7</strong></a></td>
+            <td class="num">104</td>
+            <td class="num">3322.44</td>
+          </tr>
+          <tr>
+            <td><a href="/a-note-frequency.html"><strong>A7</strong></a></td>
+            <td class="num">105</td>
+            <td class="num">3520.00</td>
+          </tr>
+          <tr>
+            <td><a href="/a-sharp-note-frequency.html"><strong>A♯7</strong></a></td>
+            <td class="num">106</td>
+            <td class="num">3729.31</td>
+          </tr>
+          <tr>
+            <td><a href="/b-note-frequency.html"><strong>B7</strong></a></td>
+            <td class="num">107</td>
+            <td class="num">3951.07</td>
+          </tr>
+          <tr>
+            <td><a href="/c-note-frequency.html"><strong>C8</strong></a></td>
+            <td class="num">108</td>
+            <td class="num">4186.01</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>The formula behind these numbers</h2>
+  <p>Equal temperament divides the octave into twelve equal semitones, so one semitone is a ratio of
+     the twelfth root of two. With A4 (MIDI 69) fixed at 440 Hz, the frequency of any MIDI note
+     <em>m</em> is:</p>
+  <p><code>f = 440 × 2<sup>(m − 69) / 12</sup></code></p>
+  <p>Two useful consequences: moving up <strong>one octave</strong> doubles the frequency, and moving
+     up <strong>one semitone</strong> multiplies it by about 1.0595 (roughly 5.95%).</p>
+
+  <h2>Landmark notes</h2>
+  <ul>
+    <li><strong>A0</strong> — 27.50 Hz, the lowest note on a standard piano.</li>
+    <li><strong>C4 (middle C)</strong> — 261.63 Hz, MIDI 60. <a href="/middle-c-frequency.html">More on middle C</a>.</li>
+    <li><strong>A4</strong> — 440.00 Hz, MIDI 69, the tuning reference. <a href="/a4-frequency.html">More on A4 = 440 Hz</a>.</li>
+    <li><strong>C8</strong> — 4186.01 Hz, the highest note on a standard piano.</li>
+  </ul>
+
+  <nav class="related" aria-label="Related tools">
+    <h2>Related music tools</h2>
+    <ul>
+      <li><a href="/a4-frequency.html">A4 = 440 Hz — the tuning standard</a></li>
+      <li><a href="/middle-c-frequency.html">Middle C frequency (C4)</a></li>
+      <li><a href="/convert-bpm-to-ms.html">BPM to milliseconds converter</a></li>
+      <li><a href="/bpm-to-ms-reference.html">BPM to ms reference</a></li>
+      <li><a href="/tempo-chart.html">Tempo markings chart</a></li>
+    </ul>
+  </nav>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>What frequency is A4?</dt>
+    <dd>A4 is 440 Hz. It is the international tuning reference (ISO 16) and MIDI note 69. You can read more on the A4 = 440 Hz page.</dd>
+    <dt>What is the frequency range of an 88-key piano?</dt>
+    <dd>A standard 88-key piano runs from A0 at 27.50 Hz to C8 at 4186.01 Hz.</dd>
+    <dt>What is middle C in Hz?</dt>
+    <dd>Middle C (C4, MIDI 60) is 261.63 Hz. Note that some manufacturers, Yamaha among them, label this note C3 — the sound is identical, only the octave numbering differs.</dd>
+    <dt>How do you calculate a note frequency from a MIDI number?</dt>
+    <dd>Use f = 440 × 2^((m − 69) / 12), where m is the MIDI note number. MIDI 69 is A4 = 440 Hz, MIDI 60 is middle C, and each increase of 12 doubles the frequency.</dd>
+    <dt>Do these frequencies change between instruments?</dt>
+    <dd>The nominal frequencies do not, but real instruments vary. Pianos are stretched-tuned slightly, orchestras sometimes tune to 442 or 443 Hz rather than 440, and wind players bend pitch by design. The table gives the theoretical equal-temperament values.</dd>
+  </dl>
+
+  <p class="updated">Last updated: 2026-09-01</p>
+</main>
+</body>
+</html>

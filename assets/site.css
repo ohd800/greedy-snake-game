@@ -197,6 +197,11 @@ input:focus, select:focus, textarea:focus { border-color: var(--brand); }
 .tempo-index a { margin-right: 2px; white-space: nowrap; }
 .bpm-index { font-size: .95rem; line-height: 2; margin: 18px 0 4px; }
 .bpm-index a { margin-right: 2px; white-space: nowrap; }
+.note-index { font-size: .95rem; line-height: 2; margin: 18px 0 4px; }
+.note-index a { margin-right: 2px; white-space: nowrap; }
+
+/* Highlight row for the A4 = 440 Hz reference in frequency tables */
+table tr.hl td { background: rgba(11, 107, 203, .09); font-weight: 600; }
 
 .btn {
   display: inline-block;
