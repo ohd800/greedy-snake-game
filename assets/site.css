@@ -203,6 +203,23 @@ input:focus, select:focus, textarea:focus { border-color: var(--brand); }
 /* Highlight row for the A4 = 440 Hz reference in frequency tables */
 table tr.hl td { background: rgba(11, 107, 203, .09); font-weight: 600; }
 
+/* Interactive piano keyboard (MIDI to frequency converter) */
+.pkb { overflow-x: auto; margin: 14px 0 6px; padding-bottom: 6px; }
+.pkb-inner { position: relative; height: 104px; }
+.pkb-white, .pkb-black { position: absolute; top: 0; cursor: pointer; box-sizing: border-box; }
+.pkb-white {
+  width: 15px; height: 104px; background: #fcfcfc;
+  border: 1px solid #b9b9b9; border-radius: 0 0 3px 3px;
+}
+.pkb-black {
+  width: 10px; height: 64px; background: #23262b;
+  z-index: 2; border-radius: 0 0 2px 2px;
+}
+.pkb-white:hover { background: #eaf2fc; }
+.pkb-black:hover { background: #3a4048; }
+.pkb-white.on { background: var(--brand); border-color: var(--brand); }
+.pkb-black.on { background: var(--brand); }
+
 .btn {
   display: inline-block;
   font: inherit;

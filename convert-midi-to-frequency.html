@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIDI to Frequency Converter — Note Number to Hz Calculator</title>
+<meta name="description" content="Convert MIDI note numbers to frequencies in Hz, note names to MIDI numbers, and hertz back to the nearest note. Includes an interactive 88-key piano keyboard. Free, no signup, runs in your browser.">
+<link rel="canonical" href="https://www.dhh5.com/convert-midi-to-frequency.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<meta name="theme-color" content="#0b6bcb">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="dhh5.com">
+<meta property="og:url" content="https://www.dhh5.com/convert-midi-to-frequency.html">
+<meta property="og:title" content="MIDI to Frequency Converter — Note Number to Hz">
+<meta property="og:description" content="Three-way conversion between MIDI numbers, note names and frequencies, with an interactive piano keyboard.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MIDI to Frequency Converter">
+<meta name="twitter:description" content="Convert between MIDI note numbers, note names and hertz instantly.">
+
+<link rel="stylesheet" href="/assets/site.css">
+<script src="/assets/site.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "MIDI to Frequency Converter",
+      "url": "https://www.dhh5.com/convert-midi-to-frequency.html",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.dhh5.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Music & audio tools", "item": "https://www.dhh5.com/#music" },
+        { "@type": "ListItem", "position": 3, "name": "MIDI to Frequency" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you convert a MIDI note number to hertz?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use the formula f = 440 × 2^((m − 69) / 12), where m is the MIDI note number. MIDI 69 is A4 at 440 Hz, and every increase of 12 doubles the frequency. MIDI 60 (middle C) gives 261.63 Hz." }
+        },
+        {
+          "@type": "Question",
+          "name": "What MIDI number is middle C?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Middle C is MIDI note 60. In scientific pitch notation it is C4 at 261.63 Hz; some manufacturers label it C3, but the MIDI number is always 60." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find the MIDI note for a frequency?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Rearrange the formula to m = 69 + 12 × log2(f / 440) and round to the nearest whole number. This converter does it automatically and also tells you how many cents the frequency sits from the nearest equal-tempered note." }
+        },
+        {
+          "@type": "Question",
+          "name": "What note names does the converter accept?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Standard scientific pitch notation such as C4, F#3 or Bb2. Sharps can be written with # or the sharp sign, and flats with a lowercase b or the flat sign. Letter names are not case sensitive." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data uploaded anywhere?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. The calculation runs entirely in your browser; nothing is sent to a server." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B34ML8T3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8B34ML8T3P');
+  </script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="/">dhh5.com</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/#tools">All tools</a>
+      <a href="/#music">Music tools</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/#music">Music &amp; audio tools</a></li>
+      <li>MIDI to frequency</li>
+    </ol>
+  </nav>
+
+  <h1>MIDI to Frequency Converter</h1>
+  <p>Convert in any direction: type a <strong>MIDI note number</strong>, a
+     <strong>note name</strong> such as <code>C4</code> or <code>F#3</code>, or a
+     <strong>frequency in hertz</strong>. The other two fields update instantly, and the note lights
+     up on the keyboard below.</p>
+
+  <div class="card">
+    <div class="field">
+      <label for="midiInput">MIDI note number</label>
+      <input type="number" id="midiInput" min="0" max="127" step="1" placeholder="e.g. 69" inputmode="numeric">
+      <p class="hint">Whole numbers from 0 (C−1) to 127 (G9). An 88-key piano covers 21–108.</p>
+    </div>
+
+    <div class="field">
+      <label for="nameInput">Note name</label>
+      <input type="text" id="nameInput" placeholder="e.g. A4, F#3, Bb2" autocomplete="off" spellcheck="false">
+      <p class="hint">Letter, optional accidental (<code>#</code> or <code>b</code>), then octave number.</p>
+    </div>
+
+    <div class="field">
+      <label for="hzInput">Frequency (Hz)</label>
+      <input type="number" id="hzInput" min="0.01" step="0.01" placeholder="e.g. 440" inputmode="decimal">
+      <p class="hint">Any positive frequency. You will get the nearest note plus the offset in cents.</p>
+    </div>
+
+    <div class="btn-row">
+      <button type="button" class="btn" onclick="resetAll()">Reset</button>
+      <span class="hint" id="status" aria-live="polite"></span>
+    </div>
+
+    <div class="result-block" style="margin-top:18px">
+      <div class="result-label">Frequency</div>
+      <div class="result" id="hzOut" aria-live="polite">Enter a MIDI number, a note name or a frequency.</div>
+    </div>
+
+    <h3>Note details</h3>
+    <div class="table-scroll">
+      <table>
+        <tbody id="detailTable">
+          <tr><td colspan="2" style="color:var(--text-muted)">Nothing entered yet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>On the keyboard</h3>
+    <div class="pkb">
+      <div class="pkb-inner" id="kbInner"></div>
+    </div>
+    <p class="hint">Click any key to load that note. The keyboard spans A0 to C8 — the 88 keys of a
+       standard piano.</p>
+
+    <div class="btn-row" style="margin-top:14px">
+      <button type="button" class="btn btn-secondary btn-small" data-copy-target="#hzOut">Copy frequency</button>
+      <button type="button" class="btn btn-secondary btn-small" onclick="copyName()">Copy note name</button>
+      <button type="button" class="btn btn-secondary btn-small" onclick="copyMidi()">Copy MIDI number</button>
+    </div>
+  </div>
+
+  <h2>How the conversion works</h2>
+  <p>Modern instruments use <strong>twelve-tone equal temperament</strong>, which splits the octave
+     into twelve equal semitones. With A4 fixed at 440 Hz, the frequency of MIDI note <em>m</em> is:</p>
+  <p><code>f = 440 × 2<sup>(m − 69) / 12</sup></code></p>
+  <p>Going the other way — from hertz back to a note number:</p>
+  <p><code>m = 69 + 12 × log<sub>2</sub>(f / 440)</code></p>
+  <p><strong>Worked example.</strong> Take MIDI 60, middle C:</p>
+  <p><code>f = 440 × 2<sup>(60 − 69) / 12</sup> = 440 × 2<sup>−0.75</sup> = 261.63 Hz</code></p>
+  <p>Because each step of 12 doubles the frequency, MIDI 72 (C5) is exactly
+     <code>261.63 × 2 = 523.25 Hz</code>.</p>
+
+  <h2>Landmark MIDI numbers</h2>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th class="num">MIDI</th><th>Note</th><th class="num">Frequency (Hz)</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td class="num">21</td><td>A0</td><td class="num">27.50</td><td>Lowest key on an 88-key piano</td></tr>
+        <tr><td class="num">40</td><td>E2</td><td class="num">82.41</td><td>Lowest open string, guitar in standard tuning</td></tr>
+        <tr><td class="num">60</td><td>C4</td><td class="num">261.63</td><td>Middle C — the usual reference point</td></tr>
+        <tr><td class="num">69</td><td>A4</td><td class="num">440.00</td><td>International tuning standard (ISO 16)</td></tr>
+        <tr><td class="num">88</td><td>E6</td><td class="num">1318.51</td><td>Top of the treble staff's practical range</td></tr>
+        <tr><td class="num">108</td><td>C8</td><td class="num">4186.01</td><td>Highest key on an 88-key piano</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Frequently asked questions</h2>
+  <dl class="faq">
+    <dt>How do you convert a MIDI note number to hertz?</dt>
+    <dd>Use <code>f = 440 × 2<sup>(m − 69) / 12</sup></code>, where <em>m</em> is the MIDI number. MIDI 69 is A4 at 440 Hz, and every increase of 12 doubles the frequency.</dd>
+    <dt>What MIDI number is middle C?</dt>
+    <dd>Middle C is MIDI note 60 — C4 at 261.63 Hz. Yamaha and some DAWs label it C3, but the MIDI number is always 60.</dd>
+    <dt>How do I find the MIDI note for a frequency?</dt>
+    <dd>Use <code>m = 69 + 12 × log<sub>2</sub>(f / 440)</code> and round to the nearest whole number. This converter does it for you and also reports how many cents the input sits away from the nearest note.</dd>
+    <dt>What note names does the converter accept?</dt>
+    <dd>Scientific pitch notation such as <code>C4</code>, <code>F#3</code> or <code>Bb2</code>. Sharps accept <code>#</code> or the sharp sign, flats accept a lowercase <code>b</code> or the flat sign. Letters are not case sensitive.</dd>
+    <dt>What does the cents figure mean?</dt>
+    <dd>A cent is one hundredth of a semitone. If you enter a frequency that does not land exactly on an equal-tempered note, the cents value tells you how far off it is — useful for checking tuning.</dd>
+    <dt>Is my data uploaded anywhere?</dt>
+    <dd>No. The calculation runs entirely in your browser; nothing is sent to a server.</dd>
+  </dl>
+
+  <nav class="related" aria-label="Related tools">
+    <h2>Related music tools</h2>
+    <ul>
+      <li><a href="/midi-note-frequency-chart.html">MIDI note frequency chart</a> — all 128 MIDI notes in Hz</li>
+      <li><a href="/note-frequency-chart.html">Note frequency chart</a> — all 88 piano keys in Hz</li>
+      <li><a href="/a4-frequency.html">A4 = 440 Hz</a> — the international tuning standard</li>
+      <li><a href="/middle-c-frequency.html">Middle C frequency</a> — C4 in hertz</li>
+      <li><a href="/convert-bpm-to-ms.html">BPM to milliseconds</a> — delay and reverb timing</li>
+      <li><a href="/bpm-to-ms-reference.html">BPM to ms reference</a> — common tempos</li>
+      <li><a href="/tempo-chart.html">Tempo markings chart</a> — Italian terms and BPM bands</li>
+    </ul>
+  </nav>
+
+  <p class="updated">Last updated: 2026-09-01</p>
+</main>
+
+<script>
+/* ---------------------------------------------------------------------------
+   Three-way conversion: MIDI number <-> note name <-> frequency (Hz).
+   Same source of truth as the rest of the music cluster:
+     f(m) = 440 * 2^((m - 69) / 12)
+--------------------------------------------------------------------------- */
+var A4_HZ = 440;
+var A4_MIDI = 69;
+var NAMES  = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B'];
+var LETTER = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+var BLACK  = [false, true, false, true, false, false, true, false, true, false, true, false];
+var KB_LOW = 21, KB_HIGH = 108;   /* A0 .. C8 — the 88-key piano */
+var W_WHITE = 15, W_BLACK = 10;   /* key widths in px */
+
+var current = 69;
+
+function freqOf(m)   { return A4_HZ * Math.pow(2, (m - A4_MIDI) / 12); }
+function octOf(m)    { return Math.floor(m / 12) - 1; }
+function nameOf(m)   { return NAMES[m % 12] + octOf(m); }
+function midiOfHz(f) { return Math.round(A4_MIDI + 12 * (Math.log(f / A4_HZ) / Math.LN2)); }
+function centsOff(f, m) { return 1200 * (Math.log(f / freqOf(m)) / Math.LN2); }
+
+/* "C4", "f#3", "Bb-1" -> MIDI number, or null when unparseable. */
+function parseName(str) {
+  var s = (str || '').trim();
+  if (!s) return null;
+  var m = s.match(/^([A-Ga-g])([#♯b♭]?)(-?\d+)$/);
+  if (!m) return null;
+  var pc = LETTER[m[1].toUpperCase()];
+  if (m[2] === '#' || m[2] === '♯') pc += 1;
+  if (m[2] === 'b' || m[2] === '♭') pc -= 1;
+  var midi = (parseInt(m[3], 10) + 1) * 12 + pc;
+  return (midi >= 0 && midi <= 127) ? midi : null;
+}
+
+function setStatus(msg) {
+  var el = document.getElementById('status');
+  if (el) el.textContent = msg || '';
+}
+
+function syncInputs(source, midi, hz) {
+  if (source !== 'midi') document.getElementById('midiInput').value = midi;
+  if (source !== 'name') document.getElementById('nameInput').value = nameOf(midi);
+  if (source !== 'hz')   document.getElementById('hzInput').value = hz.toFixed(2);
+}
+
+function render(midi, displayHz, cents) {
+  current = midi;
+  if (typeof displayHz !== 'number') displayHz = freqOf(midi);
+  var pc = midi % 12;
+
+  var out = document.getElementById('hzOut');
+  out.textContent = displayHz.toFixed(2) + ' Hz';
+  out.classList.remove('error');
+
+  var rows = [
+    ['Note', nameOf(midi)],
+    ['MIDI note number', midi],
+    ['Octave', octOf(midi)],
+    ['Key colour', BLACK[pc] ? 'Black' : 'White'],
+    ['Period of one cycle', (1000 / displayHz).toFixed(4) + ' ms'],
+    ['Distance from A4', (midi - A4_MIDI) + ' semitones']
+  ];
+  if (typeof cents === 'number') {
+    rows.push(['Offset from equal temperament', (cents >= 0 ? '+' : '') + cents.toFixed(1) + ' cents']);
+  }
+  document.getElementById('detailTable').innerHTML = rows.map(function (r) {
+    return '<tr><td>' + r[0] + '</td><td class="num">' + r[1] + '</td></tr>';
+  }).join('');
+
+  highlight(midi);
+}
+
+function showError(msg) {
+  var out = document.getElementById('hzOut');
+  out.textContent = msg;
+  out.classList.add('error');
+  document.getElementById('detailTable').innerHTML =
+    '<tr><td colspan="2" style="color:var(--text-muted)">Waiting for a valid value.</td></tr>';
+  highlight(-1);
+}
+
+function highlight(midi) {
+  var keys = document.querySelectorAll('.pkb-white, .pkb-black');
+  for (var i = 0; i < keys.length; i++) {
+    if (Number(keys[i].getAttribute('data-m')) === midi) keys[i].classList.add('on');
+    else keys[i].classList.remove('on');
+  }
+}
+
+function onMidi() {
+  var raw = document.getElementById('midiInput').value;
+  if (raw === '') { setStatus(''); showError('Enter a MIDI number, a note name or a frequency.'); return; }
+  var m = parseInt(raw, 10);
+  if (isNaN(m) || m < 0 || m > 127) {
+    setStatus('MIDI numbers run from 0 to 127.');
+    showError('MIDI number out of range.');
+    return;
+  }
+  syncInputs('midi', m, freqOf(m));
+  setStatus('');
+  render(m);
+}
+
+function onName() {
+  var raw = document.getElementById('nameInput').value;
+  if (raw.trim() === '') { setStatus(''); showError('Enter a MIDI number, a note name or a frequency.'); return; }
+  var m = parseName(raw);
+  if (m === null) {
+    setStatus('Try a format like C4, F#3 or Bb2.');
+    showError('That note name could not be read.');
+    return;
+  }
+  syncInputs('name', m, freqOf(m));
+  setStatus('');
+  render(m);
+}
+
+function onHz() {
+  var raw = document.getElementById('hzInput').value;
+  if (raw === '') { setStatus(''); showError('Enter a MIDI number, a note name or a frequency.'); return; }
+  var f = parseFloat(raw);
+  if (isNaN(f) || f <= 0) {
+    setStatus('Frequency must be greater than zero.');
+    showError('That frequency is not valid.');
+    return;
+  }
+  var m = midiOfHz(f);
+  syncInputs('hz', m, f);
+  setStatus('');
+  render(m, f, centsOff(f, m));
+}
+
+function resetAll() {
+  document.getElementById('midiInput').value = '';
+  document.getElementById('nameInput').value = '';
+  document.getElementById('hzInput').value = '';
+  setStatus('');
+  showError('Enter a MIDI number, a note name or a frequency.');
+}
+
+function copyText(text, okMsg) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(
+      function () { setStatus(okMsg); },
+      function () { setStatus('Copy failed — select the value manually.'); }
+    );
+  } else {
+    setStatus('Copy is not supported in this browser.');
+  }
+}
+
+function copyName() { copyText(nameOf(current), 'Note name copied.'); }
+function copyMidi() { copyText(String(current), 'MIDI number copied.'); }
+
+/* ---- 88-key keyboard ---- */
+function buildKeyboard() {
+  var wrap = document.getElementById('kbInner');
+  if (!wrap) return;
+  var whites = '', blacks = '', wi = 0, m, pc;
+
+  for (m = KB_LOW; m <= KB_HIGH; m++) {
+    pc = m % 12;
+    if (!BLACK[pc]) {
+      whites += '<div class="pkb-white" data-m="' + m + '" title="' + nameOf(m) +
+                '" style="left:' + (wi * W_WHITE) + 'px"></div>';
+      wi++;
+    }
+  }
+  var whiteCount = wi;
+
+  wi = 0;
+  for (m = KB_LOW; m <= KB_HIGH; m++) {
+    pc = m % 12;
+    if (!BLACK[pc]) {
+      wi++;
+    } else {
+      blacks += '<div class="pkb-black" data-m="' + m + '" title="' + nameOf(m) +
+                '" style="left:' + (wi * W_WHITE - W_BLACK / 2) + 'px"></div>';
+    }
+  }
+  wrap.innerHTML = whites + blacks;
+  wrap.style.width = (whiteCount * W_WHITE) + 'px';
+
+  wrap.addEventListener('click', function (e) {
+    var key = e.target;
+    var m = Number(key.getAttribute && key.getAttribute('data-m'));
+    if (isNaN(m)) return;
+    document.getElementById('midiInput').value = m;
+    syncInputs('midi', m, freqOf(m));
+    setStatus('');
+    render(m);
+  });
+}
+
+buildKeyboard();
+document.getElementById('midiInput').addEventListener('input', onMidi);
+document.getElementById('nameInput').addEventListener('input', onName);
+document.getElementById('hzInput').addEventListener('input', onHz);
+
+/* Start on A4 = 440 Hz so the page reads as a worked example. */
+document.getElementById('midiInput').value = 69;
+document.getElementById('nameInput').value = 'A4';
+document.getElementById('hzInput').value = '440.00';
+render(69);
+</script>
+</body>
+</html>
