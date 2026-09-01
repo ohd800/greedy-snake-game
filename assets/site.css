@@ -195,6 +195,8 @@ input:focus, select:focus, textarea:focus { border-color: var(--brand); }
 
 .tempo-index { font-size: .95rem; line-height: 2; margin: 18px 0 4px; }
 .tempo-index a { margin-right: 2px; white-space: nowrap; }
+.bpm-index { font-size: .95rem; line-height: 2; margin: 18px 0 4px; }
+.bpm-index a { margin-right: 2px; white-space: nowrap; }
 
 .btn {
   display: inline-block;
