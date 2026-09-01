@@ -1,74 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://www.dhh5.com/</loc>
-    <lastmod>2026-08-31</lastmod>
+    <loc>https://www.dhh5.com/.html</loc>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-text-to-binary.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-json-to-xml.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-decimal-to-octal.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-epoch-to-date.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-rgb-to-hex.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-rgba-to-hex.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-utc-to-est.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-utc-to-edt.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-knots-to-mph.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/convert-bpm-to-ms.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/about.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/privacy.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
   <url>
     <loc>https://www.dhh5.com/contact.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-01</lastmod>
   </url>
-
+  <url>
+    <loc>https://www.dhh5.com/tempo-chart.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/grave-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/largo-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/larghetto-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/adagio-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/adagietto-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/andante-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/andantino-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/moderato-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/allegretto-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/allegro-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/vivace-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/vivo-vivacissimo-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/presto-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
+  <url>
+    <loc>https://www.dhh5.com/prestissimo-tempo.html</loc>
+    <lastmod>2026-09-01</lastmod>
+  </url>
 </urlset>
